@@ -2,11 +2,16 @@
 <html>
 <body>
 <?php
-$a = 1;
-$b = 2;
+$color = "red";
 
-if($a > $b) echo "wrong";
-else echo "correct";
+switch($color){
+    case "red":
+        echo "your color is red";
+        break;
+    case "blue":
+        echo "your color is blue";
+        break;
+}
 ?> 
 
 </body>
