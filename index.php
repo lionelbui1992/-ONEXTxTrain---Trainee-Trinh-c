@@ -2,38 +2,19 @@
 <html>
 <body>
 <?php
-$i = 1;
-$colors = array("red", "blue", "black", "orange");
-$members = array("duoc", "nam", "linh");
-while($i < 10) {
-    echo $i;
-    $i++;
-}
+$fname = "duoc";
 
-echo "<br>";
+function showName($name) {
+    return $name;
+};
 
-for($a = 0; $a < 10; $a++) {
-    echo $a;
-}
+function sum($a, $b) {
+    return $a += $b;
+};
 
-echo "<br>";
+echo showName($fname);
 
-foreach ($colors as $color) {
-    echo $color;
-} 
-
-echo "<br>";
-
-foreach ($members as $index => $color) {
-    echo "$index: $color" . "<br>";
-}
-
-
-$arrNums = array(1,2,3,4,5,6);
-foreach ($arrNums as $num) {
-    if($num == 5) break;
-    echo $num;
-}
+echo sum(1, 2);
 ?> 
 
 </body>
