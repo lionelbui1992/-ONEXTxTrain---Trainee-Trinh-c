@@ -8,13 +8,13 @@
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         if(empty($_POST["email"])) $emailErr = "Email is required";
         else 
+            $email = $_POST["email"];
             if(!filter_var($email, FILTER_VALIDATE_EMAIL)) $emailErr = "Email not valid";
-            else $email = $_POST["email"];
 
         if(empty($_POST["path"])) $urlErr = "Url is required";
-        else    
+        else
+            $url = $_POST["path"];    
             if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$url)) $urlErr = "URL not valid";
-            else $url = $_POST["path"];
     }
 ?>
 
