@@ -2,21 +2,14 @@
 <html>
 <body>
 <?php
-$a = 1;
+$pattern = '/[a-z]/';
+$subject = 'abcd';
+if (preg_match($pattern, $subject)) echo 'true';
 
-function myFunc() {
-    echo $GLOBALS["a"];
-};
-
-myFunc();
-
+$pattern2 = '/[0-9]/';
+$subject2 = '1,2,4,6';
+if(preg_match($pattern2, $subject2)) echo "true";
 ?> 
-
-<form action="process.php" method="post">
-    input name <input type="text" name="yourName" id=""> <br>
-    input email <input type="email" name="yourEmail" id=""> <br>
-    <button>Send</button>
-</form>
 
 </body>
 </html>
