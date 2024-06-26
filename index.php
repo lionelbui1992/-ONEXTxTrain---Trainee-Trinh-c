@@ -2,37 +2,28 @@
 <html>
 <body>
 <?php
-    $emailErr = $email = "";
-    $urlErr = $url = "";
+    $nameErr = "";
+    $name = "";
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
-        if(empty($_POST["email"])) $emailErr = "Email is required";
+        if(empty($_POST["name"])) $nameErr = "Name is required";
         else 
-            if(!filter_var($email, FILTER_VALIDATE_EMAIL)) $emailErr = "Email not valid";
-            else $email = $_POST["email"];
-
-        if(empty($_POST["path"])) $urlErr = "Url is required";
-        else    
-            if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$url)) $urlErr = "URL not valid";
-            else $url = $_POST["path"];
+            $name = $_POST["name"];
+            if(!preg_match("/^[a-zA-Z-' ]*$/",$name)) $nameErr = "Only letters and white space allowed";
     }
 ?>
 
 <form action="index.php" method="post">
-    Email: <input type="email" name="email" value="">
-    <span style="color: red"><?php echo $emailErr ?></span>
-    <br><br>
-    URL: <input type="text" name="path" value="">
-    <span style="color: red"><?php echo $urlErr ?></span>
+    Name: <input type="name" name="name" value="">
+    <span style="color: red"><?php echo $nameErr ?></span>
     <br><br>
     <button type="submit">Submit</button>
 </form>
 
 Your Input: 
 <br><br>
-Email: <?php echo $email ?>
-<br><br>
-URL: <?php echo $url ?>
+Name: <?php echo $name ?>
+
 
 </body>
 </html>
