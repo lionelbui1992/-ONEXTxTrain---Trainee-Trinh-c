@@ -2,38 +2,21 @@
 <html>
 <body>
 <?php
-$int = 10;
-$string = "PHP";
-$float = 10.1;
-$bool = true;
-$arr = array("a", "b", "c");
+$x = " hello world ";
+$y = "this is \"php\"";
 
-var_dump($int);
-echo "<br>";
-var_dump($string);
-echo "<br>";
-var_dump($float);
-echo "<br>";
-var_dump($bool);
-echo "<br>";
-var_dump($arr);
+echo strlen("hello world");
+echo str_word_count("hello world");
+echo strpos("hello world", "world");
+echo strtoupper("hello");
 
-echo "<br>";
+echo str_replace("world", "duoc", $x);
 
-class Car {
-    public $color;
-    public $model;
-    public function __construct($color, $model) {
-      $this->color = $color;
-      $this->model = $model;
-    }
-    public function message() {
-      return "My car is a " . $this->color . " " . $this->model . "!";
-    }
-  }
-  
-  $myCar = new Car("red", "Volvo");
-  var_dump($myCar);
+echo strrev($x);
+
+echo trim($x);
+
+echo $y;
 ?> 
 
 </body>
