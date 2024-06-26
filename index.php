@@ -3,14 +3,22 @@
 <body>
 <?php
 $a = 5;
-$b = 5.34;
-$c = "25";
+$b = "kilometers";
+$c = NULL;
+$d = NULL;
 
-var_dump(is_int($a));
+$a = (string) $a;
+$b = (int) $b;
+$c = (boolean) $c;
+$d = (array) $d;
 
-var_dump(is_float($b));
+var_dump($a);
 
-var_dump(is_string($c));
+var_dump($b);
+
+var_dump($c);
+
+var_dump($d);
 ?> 
 
 </body>
