@@ -2,14 +2,23 @@
 <html>
 <body>
 <?php
-echo __DIR__;
-echo __FILE__;
+$a = 1;
+$b = 2;
+$c = 10;
 
-function myFunc() {
-    return __FUNCTION__;
-}
+$stringA = "a";
+$stringB = "b";
 
-echo myFunc();
+echo $a + $b;
+echo $c *= 10;
+
+echo "<br>";
+
+var_dump($a === $b);
+
+echo "<br>";
+
+echo $stringA . $stringB;
 ?> 
 
 </body>
