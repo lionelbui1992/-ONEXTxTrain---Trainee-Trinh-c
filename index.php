@@ -2,44 +2,37 @@
 <html>
 <body>
 <?php
-    $nameErr = $emailErr = $genderErr = "";
-    $name = $email = $gender = "";
+    $emailErr = $email = "";
+    $urlErr = $url = "";
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
-        if(empty($_POST["name"])) $nameErr = "Name is required";
-        else $name = $_POST["name"];
         if(empty($_POST["email"])) $emailErr = "Email is required";
-        else $email = $_POST["email"];
-        if(empty($_POST["gender"])) $genderErr = "Gender is required";
-        else $gender = $_POST["gender"];
+        else 
+            if(!filter_var($email, FILTER_VALIDATE_EMAIL)) $emailErr = "Email not valid";
+            else $email = $_POST["email"];
+
+        if(empty($_POST["path"])) $urlErr = "Url is required";
+        else    
+            if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$url)) $urlErr = "URL not valid";
+            else $url = $_POST["path"];
     }
 ?>
-<form action="index.php" method="POST">
-Name: <input type="text" name="name">
-<span style="color: red"><?php echo $nameErr ?></span>
-<br><br>
-E-mail: <input type="text" name="email">
-<span style="color: red"><?php echo $emailErr ?></span>
-<br><br>
-Gender: 
-<input type="radio" name="gender" value="female">Female
-<input type="radio" name="gender" value="male">Male
-<input type="radio" name="gender" value="other">Other
-<span style="color: red"> <?php echo $genderErr ?></span>
-<br><br>
-<input type="submit">
+
+<form action="index.php" method="post">
+    Email: <input type="email" name="email" value="">
+    <span style="color: red"><?php echo $emailErr ?></span>
+    <br><br>
+    URL: <input type="text" name="path" value="">
+    <span style="color: red"><?php echo $urlErr ?></span>
+    <br><br>
+    <button type="submit">Submit</button>
 </form>
 
-<?php 
-    echo "<br>";
-    echo "Your Input: ";
-    echo "<br>";
-    echo $name;
-    echo "<br>";
-    echo $email;
-    echo "<br>";
-    echo $gender;
-    echo "<br>"; 
-?>
+Your Input: 
+<br><br>
+Email: <?php echo $email ?>
+<br><br>
+URL: <?php echo $url ?>
+
 </body>
 </html>
