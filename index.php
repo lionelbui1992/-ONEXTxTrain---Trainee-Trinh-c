@@ -2,18 +2,14 @@
 <html>
 <body>
 <?php
-define("php", "programming language");
-echo php;
-const name = "Duoc";
-echo name;
+echo __DIR__;
+echo __FILE__;
 
-define("cars", [
-    "BMW",
-    "Toyota"
-]);
+function myFunc() {
+    return __FUNCTION__;
+}
 
-echo cars[1];
-
+echo myFunc();
 ?> 
 
 </body>
