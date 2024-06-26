@@ -2,12 +2,13 @@
 <html>
 <body>
 
+<h1>my first php page</h1>
+
 <?php
-$txt = "PHP";
+$color = "red";
+echo "Hello php"."<br>";
 
-echo "I love $txt!";
-
-echo phpversion();
+echo "my car is"." ". $color;
 ?> 
 
 </body>
