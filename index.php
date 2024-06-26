@@ -2,21 +2,15 @@
 <html>
 <body>
 <?php
-$x = " hello world ";
-$y = "this is \"php\"";
+$a = 5;
+$b = 5.34;
+$c = "25";
 
-echo strlen("hello world");
-echo str_word_count("hello world");
-echo strpos("hello world", "world");
-echo strtoupper("hello");
+var_dump(is_int($a));
 
-echo str_replace("world", "duoc", $x);
+var_dump(is_float($b));
 
-echo strrev($x);
-
-echo trim($x);
-
-echo $y;
+var_dump(is_string($c));
 ?> 
 
 </body>
