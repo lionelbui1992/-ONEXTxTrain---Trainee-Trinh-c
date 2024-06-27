@@ -4,21 +4,28 @@
     <?php
         class Animal{
             public $name;
+            public $color;
 
+            function __construct($name, $color)
+            {
+                $this->name = $name;
+                $this->color = $color;
+            }       
+            
             function getName() {
                 return $this->name;
             }
 
-            function setName($name) {
-                $this->name = $name;
+            function getColor() {
+                return $this->color;
             }
         }
 
-        $pig = new Animal();
+        $pig = new Animal("piggy", "pink");
 
-        $pig->setName("piggy");
-        
         echo $pig->getName();
+        echo "<br>";
+        echo $pig->getColor();
     ?>
 
     
