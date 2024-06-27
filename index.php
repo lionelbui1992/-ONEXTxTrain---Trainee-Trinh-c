@@ -11,17 +11,21 @@
 
         if($conn->connect_error) die("Connect failed " . $conn->connect_error);
 
-        $sql = "INSERT INTO MyGuests (firstname, lastname, email)
-        VALUES ('Nam11', 'Tran222', 'trannn@gmail.com');";
-        $sql .= "INSERT INTO MyGuests (firstname, lastname, email)
-        VALUES ('da', 'aa', 'aaaa@gmail.com');";
-            
-        if ($conn->multi_query($sql) === TRUE) {
-            echo "Create successfully";
-        } else {
-            echo "Error creating table: " . $conn->error;
-        }
-        
+        $stmt = $conn->prepare("INSERT INTO MyGuests (firstname, lastname, email) VALUES (?,?,?)");
+        $stmt->bind_param("sss", $firstname, $lastname, $email);
+
+
+        $firstname = "Thanh";
+        $lastname = "Nguyen";
+        $email = "thanh@gmail.com";
+        $stmt->execute();
+
+        $firstname = "Lan";
+        $lastname = "Nguyen";
+        $email = "lan@gmail.com";
+        $stmt->execute();
+
+        $stmt->close();
         $conn->close();
     ?>
 </body>
