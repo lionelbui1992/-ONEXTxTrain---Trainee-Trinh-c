@@ -2,20 +2,13 @@
 <html>
 <body>
     <?php
-        $json_string = 
-        '{
-            "name" : "Duoc",
-            "age" : "24",
-            "location" : "VietTri"
-        }';
+        function checkNum($num) {
+            if($num > 1) throw new Exception("Giá trị phải nhỏ hơn hoặc bằng 1."); 
+            return true;
+        }
 
-        var_dump(json_decode($json_string, true)); //arr
-        echo "<br>";
-        var_dump(json_decode($json_string)); //obj
+        checkNum(2);
 
-        $age = array("Duoc" => 24, "nam" => 12, "linh" => 30);
-
-        echo json_encode($age);
     ?>
 </body>
 </html>
