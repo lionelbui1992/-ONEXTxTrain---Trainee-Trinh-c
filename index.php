@@ -2,7 +2,9 @@
 <html>
 <body>
     <?php
-        echo readfile("file.txt");
+        $fileTxt = fopen("file.txt", "w");
+        //echo fread($fileTxt, filesize("file.txt"));
+        fclose($fileTxt);
     ?>
 </body>
 </html>
