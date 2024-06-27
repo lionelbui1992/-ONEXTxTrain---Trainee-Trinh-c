@@ -2,19 +2,14 @@
 <html>
 <body>
     <?php
-        trait language{
-            public function type() {
-                echo "PHP";
+        class sound {
+            public static function makeSound() {
+                echo "Hello";
             }
         }
 
-        class Select{
-            use language;
-        }
 
-        $php = new Select();
-
-        $php->type();
+        sound::makeSound();
     ?>
 </body>
 </html>
