@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <body>
-    <?php
-        $fileTxt = fopen("file.txt", "w");
-        $txt = "Duoc\n";
-        fwrite($fileTxt, $txt);
-        $txt = "Nam\n";
-        fwrite($fileTxt, $txt);
-        fclose($fileTxt);
-    ?>
+<form action="upload.php" method="post" enctype="multipart/form-data">
+    InputName:
+    <input type="text" name="yourName" id="name">
+    <br><br>
+    Select file to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload file" name="submit">
+</form>
 </body>
 </html>
