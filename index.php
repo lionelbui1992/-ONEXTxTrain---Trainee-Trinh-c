@@ -5,10 +5,15 @@
         $hostName = "localhost";
         $userName = "root";
         $password = "";
-        $dbName = "dbtraining";
-        $connect = new mysqli($hostName, $userName, $password, $dbName);
-        if($connect->connect_error) echo "khong thanh cong";
-        echo "thanh cong";
+        
+        $conn = new mysqli($hostName, $userName, $password);
+        if($conn->connect_error) echo "connect failed";
+
+        $sql = "CREATE DATABASE myDB";
+        if($conn->query($sql)) echo "create successfully";
+        else echo "create failed";
+
+        $conn->close();
     ?>
 </body>
 </html>
