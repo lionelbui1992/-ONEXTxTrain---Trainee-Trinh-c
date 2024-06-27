@@ -2,14 +2,17 @@
 <html>
 <body>
     <?php
-        class sound {
-            public static function makeSound() {
-                echo "Hello";
+        class Profile{
+            public static $name = "Duoc";
+
+            public function getName() {
+                return self::$name;
             }
         }
 
-
-        sound::makeSound();
+        echo Profile::$name;
+        $profile = new Profile();
+        echo $profile->getName();
     ?>
 </body>
 </html>
