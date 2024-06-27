@@ -1,12 +1,16 @@
-<?php
-    include "namespace.php";
-    
-    $animal = new NS\Animal();
-    $animal->name = "pig"
-?>
 <!DOCTYPE html>
 <html>
 <body>
-    <?php echo $animal->pet(); ?>
+    <?php
+        $arr = [1,2,3];
+
+        function iterable(iterable $iter) {
+            foreach($iter as $item) {
+                echo $item;
+            }
+        }
+
+        iterable($arr);
+    ?>
 </body>
 </html>
