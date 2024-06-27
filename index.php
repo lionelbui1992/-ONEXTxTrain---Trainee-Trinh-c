@@ -11,13 +11,13 @@
 
         if($conn->connect_error) die("Connect failed " . $conn->connect_error);
 
-        $sql = "DELETE FROM MyGuests WHERE id = 3";
+        $sql = "UPDATE MyGuests SET lastname = 'trang' WHERE id=7";
         $result = $conn->query($sql);
 
         if ($conn->query($sql) === TRUE) {
-            echo "Record deleted successfully";
+            echo "Record updated successfully";
         } else {
-            echo "Error deleting record: " . mysqli_error($conn);
+            echo "Error updated record: " . mysqli_error($conn);
         }
 
         $conn->close();
