@@ -3,7 +3,10 @@
 <body>
     <?php
         $fileTxt = fopen("file.txt", "w");
-        //echo fread($fileTxt, filesize("file.txt"));
+        $txt = "Duoc\n";
+        fwrite($fileTxt, $txt);
+        $txt = "Nam\n";
+        fwrite($fileTxt, $txt);
         fclose($fileTxt);
     ?>
 </body>
