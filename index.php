@@ -11,7 +11,7 @@
 
         if($conn->connect_error) die("Connect failed " . $conn->connect_error);
 
-        $sql = "SELECT * FROM MyGuests";
+        $sql = "SELECT * FROM MyGuests WHERE lastname = 'aa'";
         $result = $conn->query($sql);
 
         if($result->num_rows > 0) {
