@@ -15,7 +15,8 @@
         VALUES ('Duoc', 'Trinh', 'trinhduoc@gmail.com')";
             
         if ($conn->query($sql) === TRUE) {
-            echo "Create table successfully";
+            $last_id = $conn->insert_id;
+            echo "Last id is " . $last_id;
         } else {
             echo "Error creating table: " . $conn->error;
         }
