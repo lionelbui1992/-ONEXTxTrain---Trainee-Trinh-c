@@ -2,13 +2,25 @@
 <html>
 <body>
     <?php
-        function checkNum($num) {
-            if($num > 1) throw new Exception("Giá trị phải nhỏ hơn hoặc bằng 1."); 
-            return true;
+        class Animal{
+            public $name;
+
+            function getName() {
+                return $this->name;
+            }
+
+            function setName($name) {
+                $this->name = $name;
+            }
         }
 
-        checkNum(2);
+        $pig = new Animal();
 
+        $pig->setName("piggy");
+        
+        echo $pig->getName();
     ?>
+
+    
 </body>
 </html>
