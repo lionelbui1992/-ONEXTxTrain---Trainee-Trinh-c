@@ -2,27 +2,19 @@
 <html>
 <body>
     <?php
-        abstract class Animal{
-            public $name;
-
-            public function __construct($name)
-            {
-                $this->name = $name;
-            }
-
-            abstract public function sound(): string; 
+        interface Animal{
+            public function makeSound();
         }
 
-        class Pig extends Animal{
-            public function sound(): string
+        class Pig implements Animal{
+            public function makeSound()
             {
-                return "the {$this->name} sound is ec ec";
+                echo "ec ec";
             }
         }
 
-        $pig = new Pig("pig");
-
-        echo $pig->sound();
+        $pig = new Pig();
+        $pig->makeSound();
     ?>
 </body>
 </html>
