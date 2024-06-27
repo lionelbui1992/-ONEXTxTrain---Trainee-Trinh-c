@@ -4,21 +4,29 @@
     <?php
         class Animal{
             public $name;
-            public $color;
+            protected $color;
+            private $weight;
 
-            function __construct($name, $color)
-            {
-                $this->name = $name;
-                $this->color = $color;
-            }       
-            
-            function __destruct()
-            {
-                echo "the pet is {$this->name} and the color is {$this->color}";
+            public function setName($n) {
+                $this->name = $n;
+            }
+
+            protected function setColor($c) {
+                $this->color = $c;
+            }
+
+            private function setWeight($w) {
+                $this->weight = $w;
             }
         }
 
-        $pig = new Animal("piggy", "pink");
+        $pig = new Animal();
+        $pig->name = "piggy";
+        //echo $pig->color = "red"; error
+        //echo $pig->weight = 100; error
+        $pig->setName("pigg");
+        //$pig->setColor("yellow"); error
+        //$pig->setWeight(200); error 
     ?>
 
     
