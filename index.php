@@ -11,14 +11,14 @@
 
         if($conn->connect_error) die("Connect failed " . $conn->connect_error);
 
-        $sql = "SELECT * FROM MyGuests ORDER BY firstname";
+        $sql = "DELETE FROM MyGuests WHERE id = 3";
         $result = $conn->query($sql);
 
-        if($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
-                echo "id: " . $row["id"] . " -firstname: " . $row["firstname"] . " -lastname: " . $row["lastname"] . "<br>";
-            }
-        } else echo "0 results";
+        if ($conn->query($sql) === TRUE) {
+            echo "Record deleted successfully";
+        } else {
+            echo "Error deleting record: " . mysqli_error($conn);
+        }
 
         $conn->close();
     ?>
