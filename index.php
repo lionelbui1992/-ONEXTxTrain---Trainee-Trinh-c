@@ -2,27 +2,20 @@
 <html>
 <body>
     <?php
-        function sayHello($callback) {
-            $callback();
-        }
+        $json_string = 
+        '{
+            "name" : "Duoc",
+            "age" : "24",
+            "location" : "VietTri"
+        }';
 
-        function sayGoodBye() {
-            echo "Bye";
-        }
+        var_dump(json_decode($json_string, true)); //arr
+        echo "<br>";
+        var_dump(json_decode($json_string)); //obj
 
-        sayHello("sayGoodBye");
+        $age = array("Duoc" => 24, "nam" => 12, "linh" => 30);
 
-
-        function getName($fname, $lname, $callback) {
-            $name = "$fname $lname";
-            $callback($name);
-        }
-
-        function fullName($name) {
-            echo $name;
-        }
-
-        getName("trinh", "duoc", "fullname")
+        echo json_encode($age);
     ?>
 </body>
 </html>
