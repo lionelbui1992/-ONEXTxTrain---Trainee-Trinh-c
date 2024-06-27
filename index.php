@@ -12,20 +12,13 @@
                 $this->color = $color;
             }       
             
-            function getName() {
-                return $this->name;
-            }
-
-            function getColor() {
-                return $this->color;
+            function __destruct()
+            {
+                echo "the pet is {$this->name} and the color is {$this->color}";
             }
         }
 
         $pig = new Animal("piggy", "pink");
-
-        echo $pig->getName();
-        echo "<br>";
-        echo $pig->getColor();
     ?>
 
     
