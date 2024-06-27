@@ -2,15 +2,27 @@
 <html>
 <body>
     <?php
-        class Profile{
-            const MY_NAME = "Trinh Duoc";
-            public function getName() {
-                echo self::MY_NAME;
-            }
-        }  
+        abstract class Animal{
+            public $name;
 
-        $profile = new Profile();
-        $profile->getName();
+            public function __construct($name)
+            {
+                $this->name = $name;
+            }
+
+            abstract public function sound(): string; 
+        }
+
+        class Pig extends Animal{
+            public function sound(): string
+            {
+                return "the {$this->name} sound is ec ec";
+            }
+        }
+
+        $pig = new Pig("pig");
+
+        echo $pig->sound();
     ?>
 </body>
 </html>
