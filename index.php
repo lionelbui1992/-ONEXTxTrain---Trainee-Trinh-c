@@ -12,11 +12,12 @@
         if($conn->connect_error) die("Connect failed " . $conn->connect_error);
 
         $sql = "INSERT INTO MyGuests (firstname, lastname, email)
-        VALUES ('Duoc', 'Trinh', 'trinhduoc@gmail.com')";
+        VALUES ('Nam11', 'Tran222', 'trannn@gmail.com');";
+        $sql .= "INSERT INTO MyGuests (firstname, lastname, email)
+        VALUES ('da', 'aa', 'aaaa@gmail.com');";
             
-        if ($conn->query($sql) === TRUE) {
-            $last_id = $conn->insert_id;
-            echo "Last id is " . $last_id;
+        if ($conn->multi_query($sql) === TRUE) {
+            echo "Create successfully";
         } else {
             echo "Error creating table: " . $conn->error;
         }
