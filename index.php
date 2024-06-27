@@ -2,19 +2,19 @@
 <html>
 <body>
     <?php
-        interface Animal{
-            public function makeSound();
-        }
-
-        class Pig implements Animal{
-            public function makeSound()
-            {
-                echo "ec ec";
+        trait language{
+            public function type() {
+                echo "PHP";
             }
         }
 
-        $pig = new Pig();
-        $pig->makeSound();
+        class Select{
+            use language;
+        }
+
+        $php = new Select();
+
+        $php->type();
     ?>
 </body>
 </html>
