@@ -1,14 +1,15 @@
 <?php
-    $cookie_name = "Duoc";
-    $cookie_value = "24tuoi";
-    setcookie($cookie_name, $cookie_value, time() + 600, "/");
+    if (session_id() === '') session_start();
+
+    if(isset($_SESSION["counter"])) $_SESSION["counter"] += 1;
+    else $_SESSION["counter"] = 1;
+
+    echo $_SESSION["counter"];
+
+    $_SESSION["name"] = "Duoc";
 ?>
 <!DOCTYPE html>
 <html>
 <body>
-    <?php
-        if(isset($_COOKIE[$cookie_name])) echo "Welcome " . $_COOKIE[$cookie_name];
-        else echo "not value"; 
-    ?>
 </body>
 </html>
