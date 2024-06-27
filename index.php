@@ -1,13 +1,14 @@
+<?php
+    $cookie_name = "Duoc";
+    $cookie_value = "24tuoi";
+    setcookie($cookie_name, $cookie_value, time() + 600, "/");
+?>
 <!DOCTYPE html>
 <html>
 <body>
-<form action="upload.php" method="post" enctype="multipart/form-data">
-    InputName:
-    <input type="text" name="yourName" id="name">
-    <br><br>
-    Select file to upload:
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload file" name="submit">
-</form>
+    <?php
+        if(isset($_COOKIE[$cookie_name])) echo "Welcome " . $_COOKIE[$cookie_name];
+        else echo "not value"; 
+    ?>
 </body>
 </html>
