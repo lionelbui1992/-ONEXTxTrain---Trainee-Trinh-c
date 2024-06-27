@@ -11,21 +11,15 @@
 
         if($conn->connect_error) die("Connect failed " . $conn->connect_error);
 
-        $stmt = $conn->prepare("INSERT INTO MyGuests (firstname, lastname, email) VALUES (?,?,?)");
-        $stmt->bind_param("sss", $firstname, $lastname, $email);
+        $sql = "SELECT * FROM MyGuests";
+        $result = $conn->query($sql);
 
+        if($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                echo "id: " . $row["id"] . " -firstname: " . $row["firstname"] . " -lastname: " . $row["lastname"] . "<br>";
+            }
+        } else echo "0 results";
 
-        $firstname = "Thanh";
-        $lastname = "Nguyen";
-        $email = "thanh@gmail.com";
-        $stmt->execute();
-
-        $firstname = "Lan";
-        $lastname = "Nguyen";
-        $email = "lan@gmail.com";
-        $stmt->execute();
-
-        $stmt->close();
         $conn->close();
     ?>
 </body>
