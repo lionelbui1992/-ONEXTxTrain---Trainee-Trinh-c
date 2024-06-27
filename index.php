@@ -1,18 +1,12 @@
+<?php
+    include "namespace.php";
+    
+    $animal = new NS\Animal();
+    $animal->name = "pig"
+?>
 <!DOCTYPE html>
 <html>
 <body>
-    <?php
-        class Profile{
-            public static $name = "Duoc";
-
-            public function getName() {
-                return self::$name;
-            }
-        }
-
-        echo Profile::$name;
-        $profile = new Profile();
-        echo $profile->getName();
-    ?>
+    <?php echo $animal->pet(); ?>
 </body>
 </html>
