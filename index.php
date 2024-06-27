@@ -11,13 +11,13 @@
 
         if($conn->connect_error) die("Connect failed " . $conn->connect_error);
 
-        $sql = "UPDATE MyGuests SET lastname = 'trang' WHERE id=7";
+        $sql = "SELECT * FROM MyGuests LIMIT 2";
         $result = $conn->query($sql);
 
-        if ($conn->query($sql) === TRUE) {
-            echo "Record updated successfully";
-        } else {
-            echo "Error updated record: " . mysqli_error($conn);
+        if($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                echo $row["id"] . " " . $row["firstname"] . " " . $row["lastname"] . "<br>";
+            }
         }
 
         $conn->close();
