@@ -1,33 +1,34 @@
 <html>
 <head>
 <script>
-function showUser(str) {
-  if (str == "") {
-    document.getElementById("txtHint").innerHTML = "";
+function showCD(str) {
+  if (str=="") {
+    document.getElementById("txtHint").innerHTML="";
     return;
-  } else {
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("txtHint").innerHTML = this.responseText;
-      }
-    };
-    xmlhttp.open("GET","family.php?q="+str,true);
-    xmlhttp.send();
   }
+  var xmlhttp=new XMLHttpRequest();
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("txtHint").innerHTML=this.responseText;
+    }
+  }
+  xmlhttp.open("GET","getcd.php?q="+str,true);
+  xmlhttp.send();
 }
 </script>
 </head>
 <body>
 
 <form>
-<select name="users" onchange="showUser(this.value)">
-  <option value="">Select a person:</option>
-  <option value="1">Duoc</option>
-    <option value="2">Nam</option>
-    </select>
+Select a CD:
+<select name="cds" onchange="showCD(this.value)">
+  <option value="">Select a CD:</option>
+  <option value="Bob Dylan">Bob Dylan</option>
+  <option value="Bee Gees">Bee Gees</option>
+  <option value="Cat Stevens">Cat Stevens</option>
+</select>
 </form>
-<br>
-<div id="txtHint"><b>Person info will be listed here...</b></div>
+<div id="txtHint"><b>CD info will be listed here...</b></div>
+
 </body>
-</html> 
+</html>
