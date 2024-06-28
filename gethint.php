@@ -1,4 +1,4 @@
-<?php // Array with names
+<?php 
 $a[] = "Anna";
 $a[] = "Brittany";
 $a[] = "Cinderella";
@@ -30,12 +30,10 @@ $a[] = "Ellen";
 $a[] = "Wenche";
 $a[] = "Vicky";
 
-// get the q parameter from URL
 $q = $_REQUEST["q"];
 
 $hint = "";
 
-// lookup all hints from array if $q is different from ""
 if ($q !== "") {
   $q = strtolower($q);
   $len=strlen($q);
@@ -50,6 +48,5 @@ if ($q !== "") {
   }
 }
 
-// Output "no suggestion" if no hint was found or output correct values
 echo $hint === "" ? "no suggestion" : $hint;
 ?>
