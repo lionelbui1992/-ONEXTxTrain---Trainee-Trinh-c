@@ -1,8 +1,8 @@
 <html>
 <head>
 <script>
-function showHint(str) {
-  if (str.length == 0) {
+function showUser(str) {
+  if (str == "") {
     document.getElementById("txtHint").innerHTML = "";
     return;
   } else {
@@ -12,7 +12,7 @@ function showHint(str) {
         document.getElementById("txtHint").innerHTML = this.responseText;
       }
     };
-    xmlhttp.open("GET", "gethint.php?q=" + str, true);
+    xmlhttp.open("GET","family.php?q="+str,true);
     xmlhttp.send();
   }
 }
@@ -20,11 +20,14 @@ function showHint(str) {
 </head>
 <body>
 
-<p><b>Start typing a name in the input field below:</b></p>
-<form action="">
-  <label for="fname">First name:</label>
-  <input type="text" id="fname" name="fname" onkeyup="showHint(this.value)">
+<form>
+<select name="users" onchange="showUser(this.value)">
+  <option value="">Select a person:</option>
+  <option value="1">Duoc</option>
+    <option value="2">Nam</option>
+    </select>
 </form>
-<p>Suggestions: <span id="txtHint"></span></p>
+<br>
+<div id="txtHint"><b>Person info will be listed here...</b></div>
 </body>
-</html>
+</html> 
