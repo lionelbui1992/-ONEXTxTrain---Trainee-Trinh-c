@@ -18,7 +18,7 @@
                         'password' => $row["password"]
                     ];
                     $_SESSION["status"] = "login successfully!!";
-                    header("Location: index.php");                   
+                    header("Location: index.php");
                     exit(0);
                 } else {
                     $_SESSION["status"] = "verified your email to login!";
