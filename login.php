@@ -1,5 +1,7 @@
 <?php
     session_start();
+
+    include_once "config.php";
     
     if(isset($_SESSION["authenticated"])) {
         $_SESSION["status"] = "your already login";
@@ -13,7 +15,7 @@
     }
 ?>
 <h1>Login form</h1>
-<form action="handleLogin.php" method="post">
+<form action=<?php echo LOGIN_URL ?> method="post">
     Email: 
     <input type="text" name="email">
     Password:
