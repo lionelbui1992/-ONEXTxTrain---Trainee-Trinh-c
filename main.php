@@ -42,8 +42,8 @@
 
     if(isset($_POST["btn_register"])) {
         if(!empty(trim($_POST["email"])) && !empty(trim($_POST["password"]))) {
-            $email = $_POST["email"];
-            $password = $_POST["password"];
+            $email = mysqli_real_escape_string($conn, $_POST["email"]);
+            $password = mysqli_real_escape_string($conn, $_POST["password"]);
             $verify_token = md5(rand());
 
             $sql_query_mail = "SELECT email FROM user WHERE email = '$email' LIMIT 1";
