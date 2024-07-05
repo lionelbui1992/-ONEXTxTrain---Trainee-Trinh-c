@@ -1,0 +1,2041 @@
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+/* ////////////////////////////////////////////////////////////////////// */
+
+img {
+  max-width: 100%;
+}
+.carousel-container {
+  width: 100% !important;
+  position: relative;
+}
+.carousel-container1 {
+  width: 100% !important;
+  position: relative;
+}
+.carousel-container2 {
+  width: 100% !important;
+  position: relative;
+}
+.carousel-container3 {
+  width: 100% !important;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .carousel-container {
+    width: 95%;
+  }
+}
+.inner-carousel {
+  width: 100%;
+  height: 848px;
+  overflow: hidden;
+}
+.track {
+  display: inline-flex;
+  height: 100%;
+  transition: transform 0.2s ease-in-out;
+  gap: 36px;
+}
+.track1 {
+  display: inline-flex;
+  height: 100%;
+  transition: transform 0.2s ease-in-out;
+  gap: 36px;
+}
+.track2 {
+  display: inline-flex;
+  height: 100%;
+  transition: transform 0.2s ease-in-out;
+  gap: 36px;
+}
+.track3 {
+  display: inline-flex;
+  height: 100%;
+  transition: transform 0.2s ease-in-out;
+  gap: 36px;
+}
+.card-container {
+  height: 848px;
+  flex-shrink: 0;
+  padding-right: 10px;
+}
+.card-container1 {
+  height: 800px;
+  flex-shrink: 0;
+  padding-right: 10px;
+}
+@media (max-width: 768px) {
+  .card-container {
+    width: 184px;
+  }
+}
+.card {
+  width: 100%;
+  height: 100%;
+  /*display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;*/
+  background-position: center bottom;
+  background-size: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  position: relative;
+}
+
+.nav button {
+  position: absolute;
+  top: 50%;
+  transform: translatey(-50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  outline: none;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+.nav .prev1 {
+  left: -30px;
+  display: none;
+}
+.nav .prev1.show {
+  display: block;
+}
+.nav .next1 {
+  right: -30px;
+}
+.nav .next1.hide {
+  display: none;
+}
+
+/* begin your experience */
+
+.nd {
+  position: absolute;
+  z-index: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 848px;
+} 
+
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* Slideshow container */
+.slideshow-container {
+  width: 1920px;
+  height: 1080px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  z-index: 1;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  z-index: 1;
+}
+
+.active, .dot:hover {
+  background-color: #717171 !important;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+body{
+  margin: 0;
+}
+.homepage-1920,
+.homepage-1920 * {
+  box-sizing: border-box; 
+}
+.homepage-1920 {
+  background: var(--dark-background-basedark, #0e0e12);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+.frame-11654 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-11651 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.hero {
+  border-radius: 8px;
+  flex-shrink: 0;
+  max-width: 1920px;
+  height: 1150px;
+  position: relative;
+  overflow: hidden;
+}
+.nav {
+  background: var(
+    --gradient-down,
+    linear-gradient(
+      180deg,
+      rgba(14, 14, 18, 1) 0%,
+      rgba(31, 31, 31, 0.9) 0.009999999747378752%,
+      rgba(33, 33, 33, 0.66) 14.722222089767456%,
+      rgba(34, 34, 34, 0.55) 26.944443583488464%,
+      rgba(35, 35, 35, 0.44) 39.444443583488464%,
+      rgba(36, 36, 36, 0.33) 49.72222149372101%,
+      rgba(37, 37, 37, 0.23) 59.44444537162781%,
+      rgba(38, 38, 38, 0.14) 69.44444179534912%,
+      rgba(39, 39, 39, 0.08) 77.49999761581421%,
+      rgba(39, 39, 39, 0.03) 86.66666746139526%,
+      rgba(39, 39, 39, 0) 93.33333373069763%,
+      rgba(39, 39, 39, 0) 100%,
+      rgba(39, 39, 39, 0) 100%
+    )
+  );
+  padding: 0px 82px 0px 82px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 1920px;
+  height: 180px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 100px;
+  position: relative;
+}
+.pe-logo {
+  flex-shrink: 0;
+  width: 180px;
+  height: 36px;
+  position: relative;
+  overflow: hidden;
+}
+.group {
+  position: absolute;
+  inset: 0;
+}
+.porsche-experience-rgb-neg-1-new {
+  width: 99.66%;
+  height: 98.12%;
+  position: absolute;
+  right: 0.34%;
+  left: 0%;
+  bottom: 1.88%;
+  top: 0%;
+  overflow: hidden;
+}
+.group2 {
+  height: auto;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+}
+.frame-11646 {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  width: 851.6px;
+  position: relative;
+}
+.nav-link-dark {
+  border-radius: 4px;
+  padding: 7px 5px 7px 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.label {
+  color: var(--light-background-baselight, #ffffff);
+  text-align: right;
+  font-family: "PorscheNext-Regular", sans-serif;
+  font-size: 20px;
+  line-height: 26.3px;
+  font-weight: 400;
+  position: relative;
+  text-decoration: none;
+}
+
+.frame-10673 {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  position: relative;
+}
+.menu-button-dark {
+  border-radius: 4px;
+  padding: 7px 5px 7px 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  height: 27px;
+  position: relative;
+}
+.menu-lines {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.list {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+  overflow: visible;
+}
+.spacer {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-10672 {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  position: absolute;
+  left: calc(50% - 644px);
+  top: 36px;
+}
+.gradient-black {
+  background: linear-gradient(
+    180deg,
+    rgba(14, 14, 18, 1) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  width: 100%;
+  height: 55.19%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: -55.19%;
+  top: 100%;
+  transform-origin: 0 0;
+  transform: rotate(0deg) scale(1, -1);
+}
+.frame-11815 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  left: 194px;
+  top: 714px;
+}
+.frame-10674 {
+  display: flex;
+  flex-direction: row;
+  gap: 484px;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-10561 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 994px;
+  position: relative;
+}
+.porsche-experience-inspiration-with-every-kilometre {
+  color: #fbfcff;
+  text-align: left;
+  font-family: var(
+    --1920-display-medium-font-family,
+    "PorscheNext-Regular",
+    sans-serif
+  );
+  font-size: var(--1920-display-medium-font-size, 89.69999694824219px);
+  line-height: var(--1920-display-medium-line-height, 106.9px);
+  font-weight: var(--1920-display-medium-font-weight, 400);
+  position: relative;
+  width: 896px;
+}
+.button {
+  border-radius: 4px;
+  border-style: solid;
+  border-color: var(--dark-primarydark, #fbfcff);
+  border-width: 2px;
+  padding: 15px 28px 15px 28px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.some-label {
+  color: var(--dark-primarydark, #fbfcff);
+  text-align: left;
+  font-family: var(
+    --utility-small-regular-font-family,
+    "PorscheNext-Regular",
+    sans-serif
+  );
+  font-size: var(--utility-small-regular-font-size, 16px);
+  line-height: var(--utility-small-regular-line-height, 24px);
+  font-weight: var(--utility-small-regular-font-weight, 400);
+  position: relative;
+}
+.slider-dots-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 1532px;
+  position: relative;
+}
+.slider-dots {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.slider-dot {
+  padding: 8px 4px 8px 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.dot {
+  background: var(--light-background-baselight, #ffffff);
+  border-radius: 4px;
+  flex-shrink: 0;
+  width: 20px;
+  height: 8px;
+  position: relative;
+}
+.slider-dot2 {
+  padding: 8px 4px 8px 4px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.dot2 {
+  background: var(--light-neutral-color-contrast-mediumlight, #6b6d70);
+  border-radius: 4px;
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  position: relative;
+}
+.nav-arrows {
+  padding: 0px 16px 0px 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 1920px;
+  position: absolute;
+  left: 0px;
+  top: calc(50% - 16px);
+}
+.button-left {
+  border-radius: 4px;
+  padding: 2px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.wrapper {
+  border-radius: 4px;
+  padding: 2px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.arrow-left {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+.arrow-open-full-left {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+  overflow: visible;
+}
+.button-right {
+  border-radius: 4px;
+  padding: 2px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.arrow-right {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+.arrow-open-full-right {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+  overflow: visible;
+}
+.por-25-image-cta-cards-1920 {
+  background: var(--dark-background-basedark, #0e0e12);
+  padding: 150px 305px 150px 305px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 1920px;
+  height: 842px;
+  position: relative;
+  overflow: hidden;
+}
+.frame-11650 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.begin-your-experience {
+  color: var(--light-background-baselight, #ffffff);
+  text-align: center;
+  font-family: var(
+    --1920-heading-xx-large-font-family,
+    "PorscheNext-SemiBold",
+    sans-serif
+  );
+  font-size: var(--1920-heading-xx-large-font-size, 50.599998474121094px);
+  line-height: var(--1920-heading-xx-large-line-height, 62.9px);
+  font-weight: var(--1920-heading-xx-large-font-weight, 600);
+  position: relative;
+  width: 1308px;
+  margin-bottom: 59px;
+}
+.frame-11649 {
+  display: flex;
+  flex-direction: row;
+  gap: 36px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.link-tile {
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  width: 412px;
+  height: 412px;
+  position: relative;
+  overflow: hidden;
+}
+.link-tile-bottom-compact {
+  background: var(
+    --dark-background-gradientbottomdark,
+    linear-gradient(
+      180deg,
+      rgba(26, 27, 29, 0) 0%,
+      rgba(26, 27, 29, 0.01) 6.666667014360428%,
+      rgba(26, 27, 29, 0.04) 13.333334028720856%,
+      rgba(26, 27, 29, 0.08) 20.000000298023224%,
+      rgba(26, 27, 29, 0.15) 26.66666805744171%,
+      rgba(26, 27, 29, 0.23) 33.33333432674408%,
+      rgba(26, 27, 29, 0.33) 40.00000059604645%,
+      rgba(26, 27, 29, 0.44) 46.666666865348816%,
+      rgba(26, 27, 29, 0.56) 53.33333611488342%,
+      rgba(26, 27, 29, 0.67) 60.00000238418579%,
+      rgba(26, 27, 29, 0.77) 66.66666865348816%,
+      rgba(26, 27, 29, 0.85) 73.33333492279053%,
+      rgba(26, 27, 29, 0.92) 80.0000011920929%,
+      rgba(26, 27, 29, 0.96) 86.66666746139526%,
+      rgba(26, 27, 29, 0.99) 93.33333373069763%,
+      rgba(26, 27, 29, 1) 100%
+    )
+  );
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  padding-bottom: 40px;
+  align-items: flex-end;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.vertical-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+}
+.content-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.headline {
+  color: var(--light-background-baselight, #ffffff);
+  text-align: left;
+  font-family: var(
+    --1920-heading-large-font-family,
+    "PorscheNext-SemiBold",
+    sans-serif
+  );
+  font-size: var(--1920-heading-large-font-size, 28.34000015258789px);
+  line-height: var(--1920-heading-large-line-height, 37.9px);
+  font-weight: var(--1920-heading-large-font-weight, 600);
+  position: relative;
+  flex: 1;
+}
+.link {
+  padding: 12px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.arrow-open-full-right2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+  overflow: visible;
+}
+.arrow-open-full-right3 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+  overflow: visible;
+}
+.arrow-open-full-right4 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+  overflow: visible;
+}
+.por-26-3-experience-levels-v-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  margin-bottom: 153px;
+}
+.por-26-3-experience-levels-hover-state {
+  background: linear-gradient(
+      to left,
+      rgba(14, 14, 18, 0.34),
+      rgba(14, 14, 18, 0.34)
+    ),
+    linear-gradient(
+      180deg,
+      rgba(14, 14, 18, 1) 0%,
+      rgba(14, 14, 18, 0.84) 12.896807491779327%,
+      rgba(14, 14, 18, 0.66) 19.785302877426147%,
+      rgba(14, 14, 18, 0.43) 31.72098696231842%,
+      rgba(14, 14, 18, 0) 44.73049342632294%,
+      rgba(14, 14, 18, 0.06) 54.56694960594177%,
+      rgba(14, 14, 18, 0.31) 69.16298270225525%,
+      rgba(14, 14, 18, 0.66) 83.12440514564514%,
+      rgba(14, 14, 18, 1) 100%
+    );
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 1920px;
+  height: 899px;
+  position: relative;
+  overflow: hidden;
+  object-fit: cover;
+}
+.por-39-dark-carousel {
+  background: var(--dark-background-basedark, #0e0e12);
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 1920px;
+  position: relative;
+  overflow: hidden;
+}
+.frame-11668 {
+  padding: 0px 0px 0px 306px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.carousel {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 1308px;
+  position: relative;
+  margin-bottom: 84px;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.headline2 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+}
+.some-heading {
+  color: var(--light-background-baselight, #ffffff);
+  text-align: left;
+  font-family: var(
+    --1920-heading-xx-large-font-family,
+    "PorscheNext-SemiBold",
+    sans-serif
+  );
+  font-size: var(--1920-heading-xx-large-font-size, 50.599998474121094px);
+  line-height: var(--1920-heading-xx-large-line-height, 62.9px);
+  font-weight: var(--1920-heading-xx-large-font-weight, 600);
+  position: relative;
+  align-self: stretch;
+}
+.nav2 {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.tiny-button {
+  border-radius: 4px;
+  padding: 2px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.arrow-open-full-left2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+  overflow: visible;
+}
+.arrow-open-full-right5 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+  overflow: visible;
+}
+.spacer2 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.frame-11667 {
+  display: flex;
+  flex-direction: row;
+  gap: 36px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.link-product-card-1920 {
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 636px;
+  height: 848px;
+  position: relative;
+  overflow: hidden;
+}
+.top {
+  background: linear-gradient(
+    180deg,
+    rgba(30, 30, 30, 0.8) 0%,
+    rgba(30, 30, 30, 0.79) 6.666667014360428%,
+    rgba(30, 30, 30, 0.77) 13.333334028720856%,
+    rgba(31, 31, 31, 0.73) 20.000000298023224%,
+    rgba(31, 31, 31, 0.68) 26.66666805744171%,
+    rgba(32, 32, 32, 0.61) 33.33333432674408%,
+    rgba(33, 33, 33, 0.53) 40.00000059604645%,
+    rgba(34, 34, 34, 0.45) 46.666666865348816%,
+    rgba(35, 35, 35, 0.35) 53.33333611488342%,
+    rgba(36, 36, 36, 0.27) 60.00000238418579%,
+    rgba(37, 37, 37, 0.19) 66.66666865348816%,
+    rgba(38, 38, 38, 0.12) 73.33333492279053%,
+    rgba(39, 39, 39, 0.07) 80.0000011920929%,
+    rgba(39, 39, 39, 0.03) 86.66666746139526%,
+    rgba(39, 39, 39, 0.01) 93.33333373069763%,
+    rgba(39, 39, 39, 0) 100%
+  );
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.spacer3 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+}
+.content2 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 150px;
+  position: relative;
+}
+.vergleichen-sie-unse {
+  color: var(--dark-primarydark, #fbfcff);
+  text-align: left;
+  font-family: var(
+    --1920-heading-x-large-font-family,
+    "PorscheNext-SemiBold",
+    sans-serif
+  );
+  font-size: var(--1920-heading-x-large-font-size, 37.709999084472656px);
+  line-height: var(--1920-heading-x-large-line-height, 48.4px);
+  font-weight: var(--1920-heading-x-large-font-weight, 600);
+  position: relative;
+  align-self: stretch;
+}
+.vergleichen-sie-unse2 {
+  color: var(--light-background-baselight, #ffffff);
+  text-align: left;
+  font-family: var(
+    --1900-text-medium-font-family,
+    "PorscheNext-Regular",
+    sans-serif
+  );
+  font-size: var(--1900-text-medium-font-size, 21.299999237060547px);
+  line-height: var(--1900-text-medium-line-height, 30px);
+  font-weight: var(--1900-text-medium-font-weight, 400);
+  position: relative;
+  align-self: stretch;
+}
+.bottom {
+  background: var(
+    --dark-background-gradientbottomdark,
+    linear-gradient(
+      180deg,
+      rgba(26, 27, 29, 0) 0%,
+      rgba(26, 27, 29, 0.01) 6.666667014360428%,
+      rgba(26, 27, 29, 0.04) 13.333334028720856%,
+      rgba(26, 27, 29, 0.08) 20.000000298023224%,
+      rgba(26, 27, 29, 0.15) 26.66666805744171%,
+      rgba(26, 27, 29, 0.23) 33.33333432674408%,
+      rgba(26, 27, 29, 0.33) 40.00000059604645%,
+      rgba(26, 27, 29, 0.44) 46.666666865348816%,
+      rgba(26, 27, 29, 0.56) 53.33333611488342%,
+      rgba(26, 27, 29, 0.67) 60.00000238418579%,
+      rgba(26, 27, 29, 0.77) 66.66666865348816%,
+      rgba(26, 27, 29, 0.85) 73.33333492279053%,
+      rgba(26, 27, 29, 0.92) 80.0000011920929%,
+      rgba(26, 27, 29, 0.96) 86.66666746139526%,
+      rgba(26, 27, 29, 0.99) 93.33333373069763%,
+      rgba(26, 27, 29, 1) 100%
+    )
+  );
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: flex-end;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-sed-do-eiusmod-tempor-incididunt {
+  color: var(--dark-primarydark, #fbfcff);
+  text-align: left;
+  font-family: var(
+    --fluid-1920-text-medium-font-family,
+    "PorscheNext-Regular",
+    sans-serif
+  );
+  font-size: var(--fluid-1920-text-medium-font-size, 21.299999237060547px);
+  line-height: var(--fluid-1920-text-medium-line-height, 30px);
+  font-weight: var(--fluid-1920-text-medium-font-weight, 400);
+  position: relative;
+  width: 419px;
+}
+.button-group {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+  padding: 44px 0 0 0;
+}
+.link-product-card-1921 {
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 636px;
+  height: 848px;
+  position: relative;
+  overflow: hidden;
+}
+.link-product-card-1922 {
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 636px;
+  height: 848px;
+  position: relative;
+  overflow: hidden;
+}
+.carousel2 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 1308px;
+  position: relative;
+  margin: 48px 0 284px 0;
+}
+.frame-10183 {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.dot3 {
+  background: var(--dark-primarydark, #fbfcff);
+  border-radius: 4px;
+  flex-shrink: 0;
+  width: 20px;
+  height: 8px;
+  position: relative;
+}
+.dot4 {
+  background: var(--dark-neutral-color-contrast-mediumdark, #88898c);
+  border-radius: 4px;
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  position: relative;
+}
+.frame-116672 {
+  background: var(--dark-background-basedark, #0e0e12);
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 1920px;
+  position: relative;
+  overflow: hidden;
+}
+.some-heading2 {
+  color: var(--dark-primarydark, #fbfcff);
+  text-align: left;
+  font-family: var(
+    --1920-heading-xx-large-font-family,
+    "PorscheNext-SemiBold",
+    sans-serif
+  );
+  font-size: var(--1920-heading-xx-large-font-size, 50.599998474121094px);
+  line-height: var(--1920-heading-xx-large-line-height, 62.9px);
+  font-weight: var(--1920-heading-xx-large-font-weight, 600);
+  position: relative;
+  align-self: stretch;
+}
+.arrow-open-full-left3 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+  overflow: visible;
+}
+.arrow-open-full-right6 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+  overflow: visible;
+}
+.link-product-card-19222 {
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 636px;
+  height: 848px;
+  position: relative;
+  overflow: hidden;
+}
+.por-28-text-media-hero-large-heading-body-copy-image-video {
+  background: var(--dark-background-basedark, #0e0e12);
+  padding: 0px 82px 0px 82px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.frame-11662 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-11661 {
+  flex-shrink: 0;
+  width: 1756px;
+  height: 171px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 200px;
+}
+.group-10405 {
+  position: absolute;
+  inset: 0;
+}
+.porsche-driving-at-it-s-best-on-the-racetrack {
+  color: var(--light-background-baselight, #ffffff);
+  text-align: left;
+  font-family: var(
+    --1300-display-medium-font-family,
+    "PorscheNext-Regular",
+    sans-serif
+  );
+  font-size: var(--1300-display-medium-font-size, 50px);
+  line-height: var(--1300-display-medium-line-height, 81.9px);
+  font-weight: var(--1300-display-medium-font-weight, 400);
+  position: absolute;
+  left: 113px;
+  top: 7px;
+  width: 628px;
+}
+.lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua-ut-enim-ad-minim-veniam-quis-nostrud-exercitation-ullamco-laboris-nisi-ut-aliquip-ex-ea-commodo-consequat {
+  color: var(--light-background-baselight, #ffffff);
+  text-align: left;
+  font-size: 20px;
+  line-height: var(--1300-text-large-line-height, 34.3px);
+  font-weight: var(--1300-text-large-font-weight, 400);
+  position: absolute;
+  left: 896px;
+  top: 15px;
+  width: 635px;
+}
+.video-1920 {
+  flex-shrink: 0;
+  width: 1755.2px;
+  height: 987px;
+  position: relative;
+}
+.group-10403 {
+  position: absolute;
+  inset: 0;
+}
+.image-3 {
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+  object-fit: cover;
+}
+.frame-11847 {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  right: 36.2px;
+  top: 897px;
+}
+.button2 {
+  border-radius: 4px;
+  border-style: solid;
+  border-color: var(--dark-primarydark, #fbfcff);
+  border-width: 2px;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 54px;
+  height: 54px;
+  position: relative;
+}
+.sound {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.mute {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+  overflow: visible;
+}
+.pause {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.pause2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+  overflow: visible;
+}
+.spacer4 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  width: 2.05%;
+  height: 3.65%;
+  position: absolute;
+  right: 0%;
+  left: 97.95%;
+  bottom: 3.95%;
+  top: 92.4%;
+}
+.spacer5 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  width: 2.05%;
+  height: 3.65%;
+  position: absolute;
+  right: 2.73%;
+  left: 95.21%;
+  bottom: 0%;
+  top: 96.35%;
+}
+.por-39-carousel-1921 {
+  background: var(--dark-background-basedark, #0e0e12);
+  flex-shrink: 0;
+  width: 1920px;
+  height: 1266px;
+  position: relative;
+  overflow: hidden;
+}
+.nav3 {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  left: 1374px;
+  top: 7946px;
+}
+.close {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+.cancel {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+.cancel2 {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+.frame-116682 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  left: 306px;
+  top: 0px;
+}
+.some-heading3 {
+  color: var(--light-primarylight, #010205);
+  text-align: left;
+  font-family: var(
+    --fluid-1920-heading-xx-large-font-family,
+    "PorscheNext-SemiBold",
+    sans-serif
+  );
+  font-size: var(--fluid-1920-heading-xx-large-font-size, 50.599998474121094px);
+  line-height: var(--fluid-1920-heading-xx-large-line-height, 62.9px);
+  font-weight: var(--fluid-1920-heading-xx-large-font-weight, 600);
+  position: relative;
+  align-self: stretch;
+}
+.arrow-open-full-left4 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+  overflow: visible;
+}
+.arrow-open-full-right7 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+  overflow: visible;
+}
+.link-cards {
+  background: var(--dark-background-basedark, #0e0e12);
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.link-tile2 {
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  width: 636px;
+  height: 636px;
+  position: relative;
+  overflow: hidden;
+}
+.frame-11655 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 568px;
+  position: absolute;
+}
+.precision {
+  color: var(--light-background-baselight, #ffffff);
+  text-align: left;
+  font-family: var(
+    --1920-heading-medium-font-family,
+    "PorscheNext-SemiBold",
+    sans-serif
+  );
+  font-size: var(--1920-heading-medium-font-size, 21.280000686645508px);
+  line-height: var(--1920-heading-medium-line-height, 29.95px);
+  font-weight: var(--1920-heading-medium-font-weight, 600);
+  position: relative;
+  align-self: stretch;
+  margin: 44px 0 10px 0;
+}
+.launch-control-can-be-activated-in-both-sport-and-sport-plus-mode-prepares-all-systems-for-maximum-acceleration-and-delivers-incredible-power-to-the-tarmac {
+  color: var(--light-background-baselight, #ffffff);
+  text-align: left;
+  font-family: var(
+    --1300-text-small-font-family,
+    "PorscheNext-Regular",
+    sans-serif
+  );
+  font-size: var(--1300-text-small-font-size, 16px);
+  line-height: var(--1300-text-small-line-height, 24px);
+  font-weight: var(--1300-text-small-font-weight, 400);
+  position: relative;
+  width: 541px;
+}
+.link-pure {
+  border-radius: 4px;
+  padding: 2px 4px 2px 4px;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+.arrow-open-full-right8 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+  overflow: visible;
+}
+.label2 {
+  color: var(--light-primarylight, #010205);
+  text-align: right;
+  font-family: var(
+    --utility-small-regular-font-family,
+    "PorscheNext-Regular",
+    sans-serif
+  );
+  font-size: var(--utility-small-regular-font-size, 16px);
+  line-height: var(--utility-small-regular-line-height, 24px);
+  font-weight: var(--utility-small-regular-font-weight, 400);
+  position: relative;
+}
+.frame-11665 {
+  background: var(--dark-background-basedark, #0e0e12);
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.arrow-open-full-right9 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+  overflow: visible;
+}
+.frame-11666 {
+  background: var(--dark-background-basedark, #0e0e12);
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.arrow-open-full-right10 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+  overflow: visible;
+}
+.footers {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  height: 1080px;
+  position: relative;
+}
+.footer {
+  background: var(--dark-background-basedark, #0e0e12);
+  flex: 1;
+  width: 1920px;
+  position: relative;
+  overflow: hidden;
+}
+.frame-11826 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  left: 194px;
+  top: 0px;
+  margin-top: 300px;
+}
+.frame-11828 {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.contact2 {
+  color: #ffffff;
+  text-align: left;
+  font-family: var(
+    --1920-heading-medium-font-family,
+    "PorscheNext-SemiBold",
+    sans-serif
+  );
+  font-size: var(--1920-heading-medium-font-size, 21.280000686645508px);
+  line-height: var(--1920-heading-medium-line-height, 29.95px);
+  font-weight: var(--1920-heading-medium-font-weight, 600);
+  position: relative;
+  width: 357px;
+}
+.contact-copy {
+  border-radius: 4px;
+  padding: 15px 0px 15px 0px;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.label3 {
+  color: var(--dark-primarydark, #fbfcff);
+  text-align: right;
+  font-family: "PorscheNext-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  position: relative;
+}
+.social {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-11827 {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.link-social {
+  border-radius: 4px;
+  border-style: solid;
+  border-color: var(--light-background-baselight, #ffffff);
+  border-width: 2px;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.logo-facebook {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+.logo-instagram {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+.logo-pinterest {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+.logo-youtube {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+.logo-twitter-x {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.layer-1 {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  left: calc(50% - 9px);
+  top: calc(50% - 9px);
+  overflow: visible;
+}
+.logo-linkedin {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+.frame-11825 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-11823 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 1532px;
+  position: relative;
+}
+.frame-11821 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-11820 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.company {
+  color: #ffffff;
+  text-align: left;
+  font-family: var(
+    --1920-heading-medium-font-family,
+    "PorscheNext-SemiBold",
+    sans-serif
+  );
+  font-size: var(--1920-heading-medium-font-size, 21.280000686645508px);
+  line-height: var(--1920-heading-medium-line-height, 29.95px);
+  font-weight: var(--1920-heading-medium-font-weight, 600);
+  position: relative;
+  margin: 76px 0 8px 0;
+}
+.porsche-at-a-glance {
+  color: #ffffff;
+  text-align: left;
+  font-family: var(
+    --1900-text-small-font-family,
+    "PorscheNext-Regular",
+    sans-serif
+  );
+  font-size: var(--1900-text-small-font-size, 16px);
+  line-height: var(--1900-text-small-line-height, 24px);
+  font-weight: var(--1900-text-small-font-weight, 400);
+  position: relative;
+  margin: 8px 0 8px 0;
+}
+.spacer6 {
+  margin: 0 0 0 -14px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-118202 {
+  margin: 0 0 0 -14px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-11822 {
+  margin: 0 0 0 -14px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-118232 {
+  margin: 0 0 0 -14px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-11824 {
+  margin: 0 0 0 -14px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.divider-horizontal {
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 0px;
+  position: relative;
+  overflow: visible;
+}
+._horizontal {
+  width: 95.75rem;
+  height: 0.0625rem;
+  background: #404044;
+  margin: 76px 0 36px 0;
+}
+._2021-porsche-chin {
+  color: #ffffff;
+  text-align: left;
+  font-family: "PorscheNext-Regular", sans-serif;
+  font-size: 14px;
+  line-height: 21.75px;
+  font-weight: 400;
+  position: relative;
+  width: 1532px;
+}
+._2021-porsche-chin-span {
+  color: #ffffff;
+  font-family: "PorscheNext-Regular", sans-serif;
+  font-size: 14px;
+  line-height: 21.75px;
+  font-weight: 400;
+}
+._2021-porsche-chin-span2 {
+  color: #ffffff;
+  font-family: "PorscheNext-Regular", sans-serif;
+  font-size: 14px;
+  line-height: 21.75px;
+  font-weight: 400;
+  text-decoration: underline;
+}
+._2021-porsche-chin-span3 {
+  color: #ffffff;
+  font-family: "PorscheNext-Regular", sans-serif;
+  font-size: 14px;
+  line-height: 21.75px;
+  font-weight: 400;
+}
+._2021-porsche-chin-span4 {
+  color: #ffffff;
+  font-family: "PorscheNext-Regular", sans-serif;
+  font-size: 14px;
+  line-height: 21.75px;
+  font-weight: 400;
+}
+._2021-porsche-chin-span5 {
+  color: #ffffff;
+  font-family: "PorscheNext-Regular", sans-serif;
+  font-size: 14px;
+  line-height: 21.75px;
+  font-weight: 400;
+  text-decoration: underline;
+}
+.jtb-logo {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.pe-logo2 {
+  flex-shrink: 0;
+  width: 234px;
+  height: 47px;
+  position: relative;
+  overflow: hidden;
+}
+.group3 {
+  height: auto;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+}
+.frame-11838 {
+  display: flex;
+  flex-direction: row;
+  gap: 7px;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  position: relative;
+}
+.web-design-melbourne {
+  color: var(--light-background-baselight, #ffffff);
+  text-align: left;
+  font-family: var(
+    --320-text-xx-small-font-family,
+    "PorscheNext-Regular",
+    sans-serif
+  );
+  font-size: var(--320-text-xx-small-font-size, 12px);
+  line-height: var(--320-text-xx-small-line-height, 19.5px);
+  font-weight: var(--320-text-xx-small-font-weight, 400);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.logo-jtb-2 {
+  flex-shrink: 0;
+  width: 40px;
+  height: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.group4 {
+  height: auto;
+  position: absolute;
+  left: 0px;
+  top: 0.03px;
+  overflow: visible;
+}
