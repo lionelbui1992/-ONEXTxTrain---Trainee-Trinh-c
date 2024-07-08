@@ -354,9 +354,9 @@
                       </div>
                     </div>
                   </div>
-                  <div class="card">
+                  <!-- <div class="card">
                     <img src="../-ONEXTxTrain---Trainee-Trinh-c/style/img/Link Product Card - 1920.png" alt="">
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
