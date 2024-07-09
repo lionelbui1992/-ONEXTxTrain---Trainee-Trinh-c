@@ -2,7 +2,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "porsche_experience";
+    $dbname = "pe_db";
 
     $conn = mysqli_connect($servername, $username, $password, $dbname);
 
