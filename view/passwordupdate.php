@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
   <!-- Design by foolishdeveloper.com -->
-    <title>Register</title>
+    <title>Login</title>
  
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -102,7 +102,7 @@ input{
     color: #e5e5e5;
 }
 .form-submit{
-    margin-top: 50px;
+    margin-top: 25px;
     width: 100%;
     background-color: #ffffff;
     color: #080710;
@@ -150,23 +150,21 @@ input{
         <div class="shape"></div>
     </div>
     <form action="<?php echo htmlspecialchars('../controller/AccountController.php'); ?>" method="post">
-        <h3>Đăng kí</h3>
+        <h3>Đăng nhập</h3>
         <?php 
             if(isset($_SESSION["status"])) {
                 echo "<div class='error'>" . $_SESSION['status'] . "</div>";
                 unset($_SESSION["status"]);
             }
         ?>
+        <input type="hidden" name="password_token" value="<?php if(isset($_GET["token"])) { echo $_GET["token"]; }?>">
         <label for="username">Username</label>
-        <input type="text" placeholder="Email" id="username" name="email" required>
-
-        <label for="password">Password</label>
-        <input type="password" placeholder="Mật khẩu" id="password" name="password" required>
-
-        <input type="submit" value="Đăng kí" name="btn-register" class="form-submit">
-        <div class="link">
-            Đã có tài khoản? Đăng nhập <a href="http://localhost:8080/PHPtraining/-ONEXTxTrain---Trainee-Trinh-c/view/login.php">tại đây</a>
-        </div>
+        <input type="text" placeholder="Email" id="username" name="email" value="<?php if(isset($_GET["email"])) { echo $_GET["email"]; } ?>" required>
+        <label for="password">New Password</label>
+        <input type="password" placeholder="Mật khẩu mới" id="password" name="new_password" required>
+        <label for="password">Confirm Password</label>
+        <input type="password" placeholder="Nhập lại mật khẩu" id="password" name="confirm_password" required>
+        <input type="submit" value="Cập nhật" name="btn-password-update" class="form-submit">
     </form>
 </body>
 </html>

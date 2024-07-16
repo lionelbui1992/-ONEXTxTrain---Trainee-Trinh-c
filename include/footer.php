@@ -6,19 +6,19 @@
     <title>Document</title>
 </head>
 <body>
-<div class="footers">
+<footer class="footers">
       <div class="footer">
         <div class="frame-11826">
           <div class="spacer"></div>
           <div class="frame-11828">
             <div class="contact">
-              <div class="contact2">Contact</div>
+              <div class="contact2" >Contact</div>
               <div class="spacer"></div>
               <div class="contact-copy">
                 <div class="label3">Do you have any questions?</div>
               </div>
               <div class="spacer"></div>
-              <div class="button">
+              <div class="button contact-btn">
                 <div class="some-label">Contact Form</div>
               </div>
             </div>
@@ -31,7 +31,7 @@
               </div>
               <div class="spacer"></div>
               <div class="frame-11827">
-                <div class="link-social">
+                <div class="link-social fb-btn">
                   <svg
                     class="logo-facebook"
                     width="24"
@@ -47,7 +47,7 @@
                   </svg>
                 </div>
                 <div class="spacer"></div>
-                <div class="link-social">
+                <div class="link-social ins-btn">
                   <svg
                     class="logo-instagram"
                     width="24"
@@ -63,7 +63,7 @@
                   </svg>
                 </div>
                 <div class="spacer"></div>
-                <div class="link-social">
+                <div class="link-social pin-btn">
                   <svg
                     class="logo-pinterest"
                     width="24"
@@ -79,7 +79,7 @@
                   </svg>
                 </div>
                 <div class="spacer"></div>
-                <div class="link-social">
+                <div class="link-social yt-btn">
                   <svg
                     class="logo-youtube"
                     width="24"
@@ -95,7 +95,7 @@
                   </svg>
                 </div>
                 <div class="spacer"></div>
-                <div class="link-social">
+                <div class="link-social tw-btn">
                   <div class="logo-twitter-x">
                     <svg
                       class="layer-1"
@@ -120,7 +120,7 @@
                   </div>
                 </div>
                 <div class="spacer"></div>
-                <div class="link-social">
+                <div class="link-social in-btn">
                   <svg
                     class="logo-linkedin"
                     width="24"
@@ -361,6 +361,6 @@
           <div class="spacer"></div>
         </div>
       </div>
-    </div>
+    </footer>
 </body>
 </html>

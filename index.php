@@ -7,6 +7,7 @@
   require "/xampp/htdocs/PHPtraining/-ONEXTxTrain---Trainee-Trinh-c/model/BeginYourExperienceModel.php";
   require "/xampp/htdocs/PHPtraining/-ONEXTxTrain---Trainee-Trinh-c/model/GetinModel.php";
   require "/xampp/htdocs/PHPtraining/-ONEXTxTrain---Trainee-Trinh-c/model/FooterModel.php";
+  require "/xampp/htdocs/PHPtraining/-ONEXTxTrain---Trainee-Trinh-c/model/ConfigModel.php";
   require "/xampp/htdocs/PHPtraining/-ONEXTxTrain---Trainee-Trinh-c/include/connectdb.php";
 
   $content = new ContentModel();
@@ -33,6 +34,9 @@
   $footerModel = new FooterModel();
   $footerModel->getDataFooter($conn);
 
+  $configModel = new ConfigModel();
+  $configModel->getDataConfig($conn);
+
   if(isset($_SESSION["data_title"])) {
     $data = $_SESSION["data_title"];
     $r = mysqli_fetch_array($data);
@@ -43,26 +47,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <?php 
+      if(isset($_SESSION["data_config"])) {
+        $data = $_SESSION["data_config"];
+        while($row = mysqli_fetch_array($data)) {
+          $title = $row["title"];
+          $desc = $row["description"];
+          $keyword = $row["keyword"];
+          echo <<<EOD
+                  <meta name="description" content="$desc">
+                  <meta name="keywords" content="$keyword">
+                  <title>$title</title>    
+              EOD;
+        }
+      }
+    ?>
+    <!-- <meta name="description" content="Mô tả ngắn gọn về nội dung trang web">
+    <meta name="keywords" content="từ_khóa1, từ_khóa2, từ_khóa3">
+    <title>Document</title> -->
     <link rel="stylesheet" href="style/style.css">
-
-<style>
-  .track3 {
-    display: inline-flex;
-    height: 100%;
-    transition: transform 0.2s ease-in-out;
-    gap: 36px;
-  }
-
-  .carousel-container3 {
-    width: 100% !important;
-    position: relative;
-  }
-
-  .f-50 {
-    font-size: 50px;
-  }
-</style>
+    <link rel="stylesheet" href="style/styles.css">
 </head>
 <body>
 <div class="homepage-1920">
@@ -70,9 +74,9 @@
     <?php include("include/header.php") ?>
 <!--  -->
     <div class="frame-11651">
-      <div class="por-25-image-cta-cards-1920">
+      <section class="por-25-image-cta-cards-1920">
         <div class="frame-11650">
-          <div class="begin-your-experience"><?php echo $r["title2"] ?></div>
+          <h2 class="begin-your-experience"><?php echo $r["title2"] ?></h2>
           <div class="spacer"></div>
           <div class="frame-11649">
             <?php 
@@ -95,7 +99,7 @@
                           <div class="vertical-wrapper">
                             <div class="spacer"></div>
                             <div class="content-wrapper">
-                              <div class="headline">$title</div>
+                              <h1 class="headline">$title</h1>
                               <div class="link">
                                 <div class="arrow-right">
                                   <svg
@@ -126,8 +130,8 @@
             
           </div>
         </div>
-      </div>
-      <div class="por-26-3-experience-levels-v-2">
+      </section>
+      <section class="por-26-3-experience-levels-v-2">
       <?php if(isset($_SESSION["data_bg1"]))
                     $data = $_SESSION["data_bg1"];
                     while($row = mysqli_fetch_array($data)) {
@@ -136,19 +140,20 @@
                                   <img
                                     class="por-26-3-experience-levels-hover-state"
                                     src="../-ONEXTxTrain---Trainee-Trinh-c/uploads/$img"
+                                    alt="Image"
                                   />
                       EOD;
                       ;
                     }
       ?>
-      </div>
-      <div class="por-39-dark-carousel">
+      </section>
+      <section class="por-39-dark-carousel">
         <div class="spacer"></div>
         <div class="frame-11668">
           <div class="carousel">
             <div class="header">
               <div class="headline2">
-                <div class="some-heading"><?php echo $r["title3"] ?></div>
+                <h2 class="some-heading"><?php echo $r["title3"] ?></h2>
                 <div class="spacer"></div>
               </div>
               <div class="nav2">
@@ -225,7 +230,7 @@
                                       </div>
                                     </div>
                                     <div class="card">
-                                      <img src="../-ONEXTxTrain---Trainee-Trinh-c/uploads/$image_url" alt="">
+                                      <img src="../-ONEXTxTrain---Trainee-Trinh-c/uploads/$image_url" alt="Image">
                                     </div>
                                   </div>
                       EOD;
@@ -245,17 +250,17 @@
           </div>
           <div class="spacer2"></div>  
           <div class="spacer2"></div>
-        </div>
+        </section>
       </div>
-      <div class="frame-116672">
+      <section class="frame-116672">
         <div class="spacer"></div>
         <div class="frame-11668">
           <div class="carousel">
             <div class="header">
               <div class="headline2">
-                <div class="some-heading2">
+                <h2 class="some-heading2">
                   <?php echo $r["title4"] ?>
-                </div>
+                </h2>
                 <div class="spacer"></div>
               </div>
               <div class="nav2">
@@ -331,32 +336,13 @@
                             </div>
                           </div>
                           <div class="card">
-                            <img src="../-ONEXTxTrain---Trainee-Trinh-c/uploads/$image_url" alt="">
+                            <img src="../-ONEXTxTrain---Trainee-Trinh-c/uploads/$image_url" alt="Image">
                           </div>
                         </div>
                       EOD;
                     }
                   }
                 ?>
-                  <div class="nd">
-                    <div>
-                      <div class="vergleichen-sie-unse2">Track</div> 
-                      <div class="vergleichen-sie-unse">Master GT3</div>
-                    </div>
-                    <div>
-                      <div class="lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-sed-do-eiusmod-tempor-incididunt">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-                      </div>
-                      <div class="button-group">
-                        <div class="button">
-                          <div class="some-label">Read More</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- <div class="card">
-                    <img src="../-ONEXTxTrain---Trainee-Trinh-c/style/img/Link Product Card - 1920.png" alt="">
-                  </div> -->
                 </div>
               </div>
             </div>
@@ -370,14 +356,14 @@
           <div class="spacer2"></div>
         </div>
       </div>
-    </div>
+    </section>
     <div class="por-28-text-media-hero-large-heading-body-copy-image-video">
       <div class="spacer2"></div>
-      <div class="frame-11662">
+      <section class="frame-11662">
         <div class="frame-11661">
-          <div class="porsche-driving-at-it-s-best-on-the-racetrack f-50">
+          <h2 class="porsche-driving-at-it-s-best-on-the-racetrack f-50 m-0">
             <?php echo $r["title5"] ?>
-          </div>
+          </h2>
           <div
             class="lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua-ut-enim-ad-minim-veniam-quis-nostrud-exercitation-ullamco-laboris-nisi-ut-aliquip-ex-ea-commodo-consequat"
           >
@@ -392,7 +378,7 @@
                       </div>
                       <div class="spacer"></div>
                       <div class="video-1920">
-                      <img class="image-3" src="../-ONEXTxTrain---Trainee-Trinh-c/uploads/$image_url" />
+                      <img class="image-3" src="../-ONEXTxTrain---Trainee-Trinh-c/uploads/$image_url" alt="Image"/>
                     EOD;
             ?>
           <div class="frame-11847">
@@ -439,8 +425,8 @@
         </div>
       </div>
       <div class="spacer"></div>
-    </div>
-    <div class="por-39-carousel-1921">
+    </section>
+    <section class="por-39-carousel-1921">
       <div class="nav3">
         <div class="tiny-button">
           <div class="wrapper">
@@ -493,9 +479,9 @@
         <div class="carousel2">
           <div class="header">
             <div class="headline2">
-              <div class="some-heading3">
+              <h2 class="some-heading3">
                 <?php echo $r["title6"] ?>
-              </div>
+              </h2>
               <div class="spacer"></div>
             </div>
             <div class="nav2">
@@ -553,7 +539,7 @@
                     echo <<<EOD
                       <div class="card-container1">
                         <div class="card">
-                          <img src="../-ONEXTxTrain---Trainee-Trinh-c/uploads/$image_url" alt="">
+                          <img src="../-ONEXTxTrain---Trainee-Trinh-c/uploads/$image_url" alt="Image">
                         </div>
                         <div class="text">
                           <div class="precision">
@@ -583,7 +569,7 @@
         </div>
         <div class="spacer2"></div>
       </div>
-    </div>
+    </section>
     
     <?php include "include/footer.php" ?>
   </div>
@@ -707,6 +693,83 @@ prev3.addEventListener("click", function () {
   }
   track3.style.transform = "translateX(" + index3 * -width3 + "px)";
 });
+
+const contactBtn = document.querySelector(".contact-btn");
+contactBtn.addEventListener("click", function() {
+  window.open("http://localhost:8080/PHPtraining/-ONEXTxTrain---Trainee-Trinh-c/view/contactform.php", "_blank");
+});
+
+const fbBtn = document.querySelector(".fb-btn");
+fbBtn.addEventListener("click", function() {
+  window.open("https://www.facebook.com/", "_blank");
+});
+
+const insBtn = document.querySelector(".ins-btn");
+insBtn.addEventListener("click", function() {
+  window.open("https://www.instagram.com/", "_blank");
+});
+
+const pinBtn = document.querySelector(".pin-btn");
+pinBtn.addEventListener("click", function() {
+  window.open("https://www.pinterest.com/", "_blank");
+});
+
+const ytBtn = document.querySelector(".yt-btn");
+ytBtn.addEventListener("click", function() {
+  window.open("https://www.youtube.com/", "_blank");
+});
+
+const twBtn = document.querySelector(".tw-btn");
+twBtn.addEventListener("click", function() {
+  window.open("https://www.x.com/", "_blank");
+});
+
+const inBtn = document.querySelector(".in-btn");
+inBtn.addEventListener("click", function() {
+  window.open("https://www.linkedin.com/", "_blank");
+});
+
+const trackBtn = document.querySelector(".track-btn");
+trackBtn.addEventListener("click", function() {
+  window.scrollTo({
+    top: 5900,
+    behavior: 'smooth'
+  });
+});
+
+const iceBtn = document.querySelector(".ice-btn");
+iceBtn.addEventListener("click", function() {
+  window.scrollTo({
+    top: 7600,
+    behavior: 'smooth'
+  });
+});
+
+const travelBtn = document.querySelector(".travel-btn");
+travelBtn.addEventListener("click", function() {
+  window.scrollTo({
+    top: 3000,
+    behavior: 'smooth'
+  });
+});
+
+const eventBtn = document.querySelector(".event-btn");
+eventBtn.addEventListener("click", function() {
+  window.scrollTo({
+    top: 4500,
+    behavior: 'smooth'
+  });
+});
+
+const scrollToTop = document.querySelectorAll(".porsche-at-a-glance");
+for(let i = 0; i < scrollToTop.length; i++) {
+    scrollToTop[i].addEventListener("click", function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
 </script>
 </body>
 </html>

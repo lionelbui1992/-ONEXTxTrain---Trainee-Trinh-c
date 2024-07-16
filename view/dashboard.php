@@ -10,6 +10,8 @@
     require "../model/GetinModel.php";
     require "../model/FooterModel.php";
     require "../include/connectdb.php";
+    require "../model/ConfigModel.php";
+    require "../model/AccountModel.php";
 
     if(!isset($_SESSION["authenticated"])) {
         $_SESSION["status"] = "Đăng nhập để truy cập";
@@ -41,6 +43,12 @@
     $footerModel = new FooterModel();
     $footerModel->getDataFooter($conn);
 
+    $configModel = new ConfigModel();
+    $configModel->getDataConfig($conn);
+
+    $userModel = new AccountModel();
+    $userModel->getDataUser($conn);
+
     $hideCreateClass = $_SESSION["hide_create_ydod"] == true ? 'hide' : 'show';
     $deleteYdod = $_SESSION["delete_ydod"] == true ? 'show' : 'hide';
 
@@ -49,14 +57,13 @@
     $deleteBye = $_SESSION["delete_bye"] == true ? 'show' : 'hide';
     $deleteGetin = $_SESSION["delete_getin"] == true ? 'show' : 'hide';
     $deleteFooter = $_SESSION["delete_footer"] == true ? 'show' : 'hide';
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin</title>
 <style>
 body {
     margin: 0;
@@ -158,8 +165,121 @@ table, th, td {
             }
         ?>
     </div>
+    <br>    
+    <div class="center">
+        <form class="c" action="<?php echo htmlspecialchars('../controller/SearchController.php'); ?>" method="post">
+            <input type="text" name="keyword" placeholder="Tìm kiếm">
+            <input type="submit" name="btn-search" value="Gửi thông tin">
+        </form> 
+    </div>  
+    <div class="center">
+        <h3>Search Results</h3> 
+        <?php if(!empty($data)): ?>
+        <table class="c-table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Tiêu đề</th>
+                    <th>Mô tả</th>
+                    <th>Từ khóa</th>
+                    <th>Email</th>
+                    <th>Mật khẩu</th>
+                    <th>Trạng thái xác thực</th>
+                    <th>Nội dung</th>
+                    <th>Phụ đề</th>
+                    <th>Tiêu đề 1</th>
+                    <th>Tiêu đề 2</th>
+                    <th>Tiêu đề 3</th>
+                    <th>Tiêu đề 4</th>
+                    <th>Tiêu đề 5</th>
+                    <th>Tiêu đề 6</th>
+                    <th>Ảnh</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($data as $row): ?>
+                    <?php foreach($row as $item): ?>
+                        <tr>
+                            <td><?php echo isset($item['id']) ? htmlspecialchars($item['id']) : ''; ?></td>
+                            <td><?php echo isset($item['title']) ? htmlspecialchars($item['title']) : ''; ?></td>
+                            <td><?php echo isset($item['description']) ? htmlspecialchars($item['description']) : ''; ?></td>
+                            <td><?php echo isset($item['keyword']) ? htmlspecialchars($item['keyword']) : ''; ?></td>
+                            <td><?php echo isset($item['email']) ? htmlspecialchars($item['email']) : ''; ?></td>
+                            <td><?php echo isset($item['password']) ? htmlspecialchars($item['password']) : ''; ?></td>
+                            <td><?php echo isset($item['verify_status']) ? htmlspecialchars($item['verify_status']) : ''; ?></td>
+                            <td><?php echo isset($item['content']) ? htmlspecialchars($item['content']) : ''; ?></td>
+                            <td><?php echo isset($item['subtitle']) ? htmlspecialchars($item['subtitle']) : ''; ?></td>
+                            <td><?php echo isset($item['title1']) ? htmlspecialchars($item['title1']) : ''; ?></td>
+                            <td><?php echo isset($item['title2']) ? htmlspecialchars($item['title2']) : ''; ?></td>
+                            <td><?php echo isset($item['title3']) ? htmlspecialchars($item['title3']) : ''; ?></td>
+                            <td><?php echo isset($item['title4']) ? htmlspecialchars($item['title4']) : ''; ?></td>
+                            <td><?php echo isset($item['title5']) ? htmlspecialchars($item['title5']) : ''; ?></td>
+                            <td><?php echo isset($item['title6']) ? htmlspecialchars($item['title6']) : ''; ?></td>
+                            <td>
+                                <?php if (isset($item['image_url'])): ?>
+                                    <img class='img-upload' src='../uploads/<?php echo htmlspecialchars($item['image_url']); ?>'>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php endforeach; ?>
+            </tbody>
+        </table>            
+        <?php else: ?>
+            <p>No results found.</p>
+        <?php endif; ?>
+    </div>
+    <div class="config">
+        <h1>1. configoption</h1>
+        <table class="c-table">
+            <tr>
+                <th>ID</th>
+                <th>Tiêu đề</th>
+                <th>Mô tả</th>
+                <th>Từ khóa</th>
+                <th>Hành động</th>
+            </tr>
+            <?php if(isset($_SESSION["data_config"])) {
+                $data = $_SESSION["data_config"];
+                while($row = mysqli_fetch_array($data)) {
+                    $title = $row["title"];
+                    $description = $row["description"];
+                    $keyword = $row["keyword"];
+                    $id = $row["id"];
+                    echo "<tr><td>" . $row["id"] . "</td><td>"  . $title . "</td><td>" . $description . "</td><td>" . $keyword . "</td><td>" . "<a href='http://localhost:8080/PHPtraining/-ONEXTxTrain---Trainee-Trinh-c/controller/ConfigController.php?editid=$id'>Sửa</a>" . "</td></tr>";
+                }
+            }
+            ?>
+        </table>
+    </div>
+    <div class="config">
+        <h1>2. user</h1>
+        <table class="c-table">
+            <tr>
+                <th>ID</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Verify status</th>
+                <th>Hành động</th>
+            </tr>
+            <?php if(isset($_SESSION["data_user"])) {
+                $data = $_SESSION["data_user"];
+                while($row = mysqli_fetch_array($data)) {
+                    $email = $row["email"];
+                    $password = $row["password"];
+                    $verify_status = $row["verify_status"];
+                    $id = $row["id"];
+                    echo "<tr><td>" . $id . "</td><td>"  . $email . "</td><td>" . $password . "</td><td>" . $verify_status . "</td><td>" . "<a href='http://localhost:8080/PHPtraining/-ONEXTxTrain---Trainee-Trinh-c/controller/AccountController.php?editid=$id'>Sửa</a>" . "<br>" . "<a href='http://localhost:8080/PHPtraining/-ONEXTxTrain---Trainee-Trinh-c/controller/AccountController.php?deleteid=$id'>Xóa</a>" . "</td></tr>";
+                }
+            }
+            ?>
+        </table>
+        <div class="mt-15 center">
+            <a href="http://localhost:8080/PHPtraining/-ONEXTxTrain---Trainee-Trinh-c/view/user/createuser.php">Thêm mới</a>
+        </div>
+    </div>
     <div class="header">
-        <h1>1. Header</h1>
+        <h1>3. header</h1>
         <table class="c-table">
             <tr>
                 <th>ID</th>
@@ -181,7 +301,7 @@ table, th, td {
         </div>
     </div>
     <div class="yourdreamourdrive">
-        <h1>2. Your dreams. Our drive.</h1>
+        <h1>4. yourdreamsourdrive</h1>
         <table class="c-table">
             <tr>
                 <th>ID</th>
@@ -204,7 +324,7 @@ table, th, td {
         </div>
     </div>
     <div class="background1">
-        <h1>3. Background1</h1>
+        <h1>5. background1</h1>
         <table class="c-table">
             <tr>
                 <th>ID</th>
@@ -223,7 +343,7 @@ table, th, td {
         </table>             
     </div>
     <div class="beginyourexperience">
-        <h1>4. Begin your experience</h1>    
+        <h1>6. beginyourexperience</h1>    
         <table class="c-table">
             <tr>
                 <th>ID</th>
@@ -249,7 +369,7 @@ table, th, td {
     </div>
 
     <div class="getin">
-        <h1>5. Getin</h1>    
+        <h1>7. getin</h1>    
         <table class="c-table">
             <tr>
                 <th>ID</th>
@@ -274,7 +394,7 @@ table, th, td {
         </div>             
     </div>
     <div class="background2">
-        <h1>6. Background 2</h1>
+        <h1>8. background2</h1>
         <table class="c-table">
             <tr>
                 <th>ID</th>
@@ -294,7 +414,7 @@ table, th, td {
         </table>
     </div>
     <div class="footer">
-        <h1>7. Footer</h1>
+        <h1>9. footer</h1>
         <table class="c-table">
             <tr>
                 <th>ID</th>
@@ -318,7 +438,7 @@ table, th, td {
         </div>
     </div>
     <div class="title">
-        <h1>8. Title</h1>
+        <h1>10. title</h1>
         <table class="c-table">
             <tr>
                 <th>ID</th>

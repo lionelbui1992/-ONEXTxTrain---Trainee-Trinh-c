@@ -1,11 +1,16 @@
 <?php 
     session_start();    
+
+    if(isset($_SESSION["authenticated"])) {
+        header("Location: dashboard.php");
+        exit(0);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <!-- Design by foolishdeveloper.com -->
-    <title>Glassmorphism login Form Tutorial in html css</title>
+    <title>Login</title>
  
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -162,7 +167,7 @@ input{
 
         <label for="password">Password</label>
         <input type="password" placeholder="Mật khẩu" id="password" name="password" required>
-
+        <a href="http://localhost:8080/PHPtraining/-ONEXTxTrain---Trainee-Trinh-c/view/forgotpassword.php">Quên mật khẩu ?</a>
         <input type="submit" value="Đăng nhập" name="btn-login" class="form-submit">
         <div class="link">
             Chưa có tài khoản? Đăng kí <a href="http://localhost:8080/PHPtraining/-ONEXTxTrain---Trainee-Trinh-c/view/register.php">tại đây</a>

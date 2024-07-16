@@ -6,10 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <div
+    <header
         class="hero"
         style="
-          /* background: url('../-ONEXTxTrain---Trainee-Trinh-c/style/img/Hero.png'); */
           background-size: cover;
           background-repeat: no-repeat;
         "
@@ -21,7 +20,7 @@
                       $image_url = $row["image_url"];
                       echo <<<EOD
                                             <div class="mySlides fade">
-                                              <img src="../-ONEXTxTrain---Trainee-Trinh-c/style/img/$image_url" style="width:100%">
+                                              <img src="../-ONEXTxTrain---Trainee-Trinh-c/style/img/$image_url" style="width:100%" alt="Image">
                                             </div>
                       EOD;
                     }
@@ -36,7 +35,7 @@
             <span class="dot" onclick="currentSlide(2)"></span>
             <span class="dot" onclick="currentSlide(3)"></span>
         </div>
-        <div class="nav">
+        <nav class="nav">
           <div class="menu">
             <div class="pe-logo">
               <div class="porsche-experience-rgb-neg-1-new">
@@ -104,7 +103,7 @@
                 <div><a class="label" target="_blank" href="http://localhost:8080/PHPtraining/-ONEXTxTrain---Trainee-Trinh-c/view/login.php">My Account</a></div>
               </div>
               <div class="nav-link-dark">
-                <div class="label">Contact</div>
+                <div><a class="label" target="_blank" href="http://localhost:8080/PHPtraining/-ONEXTxTrain---Trainee-Trinh-c/view/contactform.php">Contact</a></div>
               </div>
               <div class="frame-10673">
                 <div class="menu-button-dark">
@@ -129,21 +128,21 @@
               </div>
             </div>
             <div class="frame-10672">
-              <div class="nav-link-dark">
+              <div class="nav-link-dark track-btn ">
                 <div class="label">Track</div>
               </div>
-              <div class="nav-link-dark">
+              <div class="nav-link-dark ice-btn ">
                 <div class="label">Ice</div>
               </div>
-              <div class="nav-link-dark">
+              <div class="nav-link-dark travel-btn ">
                 <div class="label">Travel</div>
               </div>
-              <div class="nav-link-dark">
+              <div class="nav-link-dark event-btn ">
                 <div class="label">Events</div>
               </div>
             </div>
           </div>
-        </div>
+        </nav>
         <div class="gradient-black"></div>
         <div class="frame-11815">
           <div class="frame-10674">
@@ -159,6 +158,6 @@
             </div>
           </div>
         </div>
-      </div>
+      </header>
 </body>
 </html>
