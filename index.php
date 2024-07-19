@@ -65,7 +65,7 @@
     <!-- <meta name="description" content="Mô tả ngắn gọn về nội dung trang web">
     <meta name="keywords" content="từ_khóa1, từ_khóa2, từ_khóa3">
     <title>Document</title> -->
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/sty.css">
     <link rel="stylesheet" href="style/styles.css">
 </head>
 <body>

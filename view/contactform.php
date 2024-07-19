@@ -8,24 +8,24 @@
 </head>
 <body>
 <div class="container">
-    <h2>Contact form</h2>
-  <form action="action_page.php">
+    <h2>Contact Form</h2>
+  <form action="../index.php">
 
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    <label for="fname">Họ</label>
+    <input type="text" id="fname" name="firstname" placeholder="Nhập họ" required>
 
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+    <label for="lname">Tên</label>
+    <input type="text" id="lname" name="lastname" placeholder="Nhập tên" required>
 
-    <label for="country">Country</label>
+    <label for="country">Quốc gia</label>
     <select id="country" name="country">
-      <option value="australia">Australia</option>
+      <option value="australia">Việt Nam</option>
       <option value="canada">Canada</option>
       <option value="usa">USA</option>
     </select>
 
-    <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+    <label for="subject">Nội dung</label>
+    <textarea id="subject" name="subject" placeholder="Viết nội dung" style="height:200px"></textarea>
 
     <input type="submit" value="Submit">
 
