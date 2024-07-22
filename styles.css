@@ -1,0 +1,49 @@
+body, html {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3c4043;
+}
+
+.btn {
+    background-color: #04AA6D; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#content {
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#sheetSelect {
+    border: 15px solid transparent;
+    background-color: DodgerBlue;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.mt-15 {
+    margin-top: 15px;
+}
+
+#nameSelect {
+    padding: 10px;
+}
+
+#roleSelect {
+    padding: 10px;
+}
+
+#get_data {
+    color: red;
+    font-size: 20px;
+}

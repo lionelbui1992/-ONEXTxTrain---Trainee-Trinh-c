@@ -4,17 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="main">
-  <button id="authorize_button" class="btn" onclick="handleAuthClick()">Authorize</button>
-  <button id="signout_button" class="btn" onclick="handleSignoutClick()">Sign Out</button>
-  <select id="sheetSelect"></select>
-  <button id="submitBtn" class="btn" onclick="submit()">Submit</button>
-  <h2 id="content"></h2>
-</div>
-    
+  <div class="main">
+    <h2 id="content"></h2>
+    <button id="authorize_button" class="btn" onclick="handleAuthClick()">Authorize</button>
+    <button id="signout_button" class="btn" onclick="handleSignoutClick()">Sign Out</button>
+    <select id="sheetSelect"></select>
+    <button id="submitBtn" class="btn" onclick="submit()">Submit</button>
+    <div class="mt-15">
+      <button class="btn" onclick="getData()">Filter Data</button>
+      <select id="roleSelect">
+        <option value="">All</option>
+        <option value="Developer">Developer</option>
+        <option value="Tester">Tester</option>
+        <option value="BA">BA</option>
+        <option value="Tech lead">Tech lead</option>
+        <option value="PM">PM</option>
+      </select>
+      <input type="text" id="nameSelect" placeholder="Input name">
+      <div id="get_data"></div>
+    </div> 
+  </div>
+  
 <script type="text/javascript">
   const CLIENT_ID = "895893914279-cmijlnglcf8vud5ua7f4t0mme66gtov1.apps.googleusercontent.com";
   const API_KEY = "AIzaSyBT7l3GpLAY1hnCPZWahc3JKfMX6tcgiEI";
@@ -171,20 +184,41 @@
     }
     console.log(response.result.values);
 
-    try {
+    for(let i = 0; i < response.result.values.length; i++) {
+      const data = {
+        "name": response.result.values[i][0],
+        "role": response.result.values[i][1]
+      } // format data
+
+      try {
       const backendResponse = await fetch('http://localhost:3000/api/saveSheetData', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ data: response.result.values }),
+          body: JSON.stringify({ data: data }),
       });
-
-      const result = await backendResponse.text();
-      document.getElementById('content').innerText = result;
-    } catch (error) {
-      document.getElementById('content').innerText = 'Error saving data';
+        const result = await backendResponse.text();
+        document.getElementById('content').innerText = result;
+      } catch (error) {
+        document.getElementById('content').innerText = 'Error saving data';
+      }
     }
+
+    // try {
+    //   const backendResponse = await fetch('http://localhost:3000/api/saveSheetData', {
+    //       method: 'POST',
+    //       headers: {
+    //           'Content-Type': 'application/json',
+    //       },
+    //       body: JSON.stringify({ data: response.result.values }),
+    //   });
+
+    //   const result = await backendResponse.text();
+    //   document.getElementById('content').innerText = result;
+    // } catch (error) {
+    //   document.getElementById('content').innerText = 'Error saving data';
+    // }
   }
 
   async function fetchSheetList(fileId) {
@@ -238,6 +272,27 @@
     console.log(`Selected Sheet ID: ${sheetId}`);
     console.log(`Selected Sheet Title: ${title}`);
     await fetchSheetData(sheetId, title);
+  }
+
+  async function getData() {
+    try {
+      const roleSelect = document.getElementById('roleSelect');
+      const inputName = document.getElementById('nameSelect');
+      const selectedOption = roleSelect.options[roleSelect.selectedIndex];
+      const backendResponse = await fetch(`http://localhost:3000/api/getData?role=${encodeURIComponent(selectedOption.value)}&name=${encodeURIComponent(inputName.value)}`);
+      const result = await backendResponse.json();
+      console.log(result);
+      const dataContainer = document.getElementById('get_data');
+      dataContainer.innerHTML = '';
+      result.forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.innerText = `Name: ${item.name} - Role: ${item.role}`;
+        dataContainer.appendChild(itemDiv);
+      })
+      // document.getElementById('get_data').innerText = JSON.stringify(result, null, 2);
+    } catch (error) {
+      document.getElementById('content').innerText = 'Error get data';
+    }
   }
 </script>
 <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
