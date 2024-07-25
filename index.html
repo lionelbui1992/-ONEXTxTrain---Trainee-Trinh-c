@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="main">
@@ -13,7 +13,8 @@
     <button id="signout_button" class="btn" onclick="handleSignoutClick()">Sign Out</button>
     <select id="sheetSelect"></select>
     <button id="submitBtn" class="btn" onclick="submit()">Submit</button>
-    <div class="mt-15">
+    <input type="text" id="range" placeholder="Input Range" required>
+    <!-- <div class="mt-15">
       <button class="btn" onclick="getData()">Filter Data</button>
       <select id="roleSelect">
         <option value="">All</option>
@@ -25,7 +26,8 @@
       </select>
       <input type="text" id="nameSelect" placeholder="Input name">
       <div id="get_data"></div>
-    </div> 
+    </div>  -->
+    <div id="table"></div>
   </div>
   
 <script type="text/javascript">
@@ -165,13 +167,13 @@
     }
   }
 
-  async function fetchSheetData(fileId, title) {
+  async function fetchSheetData(fileId, title, space) {
     let response;
     try {
     // Fetch first 10 files
         response = await gapi.client.sheets.spreadsheets.values.get({
             spreadsheetId: fileId,
-            range: title,
+            range: `${title}${space}`,
     });
     } catch (err) {
         console.log(err);
@@ -185,20 +187,29 @@
     }
     console.log(response.result.values);
 
-    //write data
+
+    //write data gg sheet
     try {
-      const backendResponse = await fetch('http://localhost:1337/api/writeSheetData', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ data: response.result.values })
-      })
-      const result = await backendResponse.text();
-      document.getElementById('content').innerText = result;
+        const backendResponse = await fetch('http://localhost:1337/api/writeSheetData', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ data: response.result.values })
+        })
+      // const result = await backendResponse.text();
+      const res = await backendResponse.json();
+      const message = res.message;
+      const data = res.data;
+      
+      document.getElementById('content').innerText = message;
+      document.getElementById('table').innerHTML = formatData(data);
     } catch (err) {
       document.getElementById('content').innerText = 'Error saving data';
     }
+
+
+
 
     // for(let i = 0; i < response.result.values.length; i++) {
     //   const data = {
@@ -235,6 +246,145 @@
     // } catch (error) {
     //   document.getElementById('content').innerText = 'Error saving data';
     // }
+  }
+
+  function  formatData(data) {
+    console.log(data);
+    const dataArr = []
+    const filter = data.filter(item => (item.data.length > 0 && item.data[1] !== ""));
+    console.log(filter);
+    console.log(filter[0].data[1])
+    filter.forEach((item, index) => {
+      const data = {
+        no: 1,
+        task: item.data[0],
+        time: 0,
+        details: [
+            { time: item.data[3], desc: item.data[1], class: "" },
+            // { time: 1.5, desc: "Server response time", class: "server-response" },
+            // { time: 2.5, desc: "Asset and resource loading analysis", class: "asset-analysis" }
+        ]
+      }
+      dataArr.push(data);
+    })
+
+    console.log(dataArr);
+    const newArr = mergeArr(dataArr);
+    console.log("NEWWWWW", newArr);
+
+
+    const html = createTable(newArr);
+    return html;
+  }
+
+  function createTable(tasks) {
+    let colNumber = 0;
+    tasks.forEach(task => {
+      colNumber += task.details.reduce((sum, detail) => sum + detail.time, 0);
+    });
+    colNumber = Math.ceil(colNumber / 8);
+
+    let tableHtml = `
+    <table class="timeline">
+      <thead>
+        <tr>
+          <th rowspan="2">No</th>
+          <th rowspan="2">Task</th>
+          <th rowspan="2">Estimated time (hours)</th>
+          <th colspan="${colNumber}" style="text-align: center">Day</th>
+        </tr>
+        <tr>
+    `;
+
+    for (let i = 1; i <= colNumber; i++) {
+      tableHtml += `<th>${i}</th>`;
+    }
+
+    tableHtml += `
+        </tr>
+      </thead>
+      <tbody>
+    `;
+
+    let totalTime = 0;
+    let tmpTime = 0;
+
+    tasks.forEach(task => {
+      task.details.forEach((detail, index) => {
+        totalTime += detail.time;
+        let tdNumber = totalTime / 8;
+        let tdNumberStandard = totalTime / 8;
+
+        tmpTime += detail.time;
+        let colspan = tmpTime / 8;
+        if (colspan > 1) {
+          colspan = 2;
+          tdNumber -= 1;
+          tmpTime = tmpTime % 8;
+        }
+
+        tableHtml += `<tr time="${tmpTime}">`;
+        if (index === 0) {
+          tableHtml += `<td rowspan="${task.details.length}">${task.no}</td>`;
+          tableHtml += `<td rowspan="${task.details.length}">${task.task}</td>`;
+        }
+        tableHtml += `<td>${detail.time}</td>`;
+
+        for (let i = 1; i < tdNumber; i++) {
+          tableHtml += `<td></td>`;
+        }
+
+        tableHtml += `<td style="background-color: ${getRandomColor()}" colspan="${colspan}">${detail.desc}</td>`;
+
+        for (let i = 1; i < (colNumber - tdNumberStandard); i++) {
+          tableHtml += `<td></td>`;
+        }
+
+        tableHtml += `</tr>`;
+      });
+    });
+
+    tableHtml += `
+      </tbody>
+    </table>
+    `;
+
+    return tableHtml;
+  }
+
+  function mergeArr(data) {
+    const result = [];
+    let currentTask = null;
+    let currentNo = 1;
+
+    data.forEach(item => {
+    if (item.task) {
+        // Nếu phần tử có giá trị trong trường task, tạo một phần tử mới trong kết quả
+        currentTask = {
+            ...item,
+            no: currentNo,
+            details: item.details.map(detail => ({
+                ...detail,
+                time: parseFloat(detail.time.replace(',', '.'))
+            })),
+        };
+        result.push(currentTask);
+        currentNo++; // Tăng giá trị no khi gặp một task mới
+    } else {
+        // Nếu không có giá trị trong trường task, thêm details vào phần tử hiện tại
+        if (currentTask) {
+            item.details.forEach(detail => {
+                currentTask.details.push({
+                    ...detail,
+                    time: parseFloat(detail.time.replace(',', '.'))
+                });
+            });
+            // Cập nhật time của phần tử hiện tại bằng cách cộng dồn time từ details
+            currentTask.time = currentTask.details.reduce((sum, detail) => sum + detail.time, 0);
+        }
+    }
+});
+    return result;
   }
 
   async function fetchSheetList(fileId) {
@@ -280,14 +430,24 @@
     // });
 }
 
+  function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+
   async function submit() {
     const selectBox = document.getElementById('sheetSelect');
     const selectedOption = selectBox.options[selectBox.selectedIndex];
     const sheetId = selectedOption.value;
     const title = selectedOption.text;
+    const space = document.getElementById('range').value;
     console.log(`Selected Sheet ID: ${sheetId}`);
     console.log(`Selected Sheet Title: ${title}`);
-    await fetchSheetData(sheetId, title);
+    await fetchSheetData(sheetId, title, space);
   }
 
   async function getData() {

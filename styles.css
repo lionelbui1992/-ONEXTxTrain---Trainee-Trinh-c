@@ -3,7 +3,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #3c4043;
+    background-color: antiquewhite;
 }
 
 .btn {
@@ -46,4 +46,109 @@ body, html {
 #get_data {
     color: red;
     font-size: 20px;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+table.timeline {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table.timeline th, table.timeline td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table.timeline th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.page-load {
+    background-color: #d9b3ff;
+}
+
+.server-response {
+    background-color: #ff9999;
+}
+
+.asset-analysis {
+    background-color: #d2b48c;
+}
+
+.meta-tags {
+    background-color: #ffd9b3;
+}
+
+.url-structure {
+    background-color: #d9b3ff;
+}
+
+.sitemap {
+    background-color: #ff9999;
+}
+
+.on-page-seo {
+    background-color: #d2b48c;
+}
+
+.https {
+    background-color: #ffd9b3;
+}
+
+.vulnerability {
+    background-color: #d9b3ff;
+}
+
+.secure-coding {
+    background-color: #ff9999;
+}
+
+.navigation {
+    background-color: #d2b48c;
+}
+
+.mobile-responsiveness {
+    background-color: #ffd9b3;
+}
+
+.accessibility {
+    background-color: #d9b3ff;
+}
+
+.content-layout {
+    background-color: #ff9999;
+}
+
+.code-structure {
+    background-color: #d9b3ff;
+}
+
+.next-js {
+    background-color: #ff9999;
+}
+
+.linting {
+    background-color: #d2b48c;
+}
+
+.dependency-management {
+    background-color: #ffd9b3;
+}
+
+.core-features {
+    background-color: #d9b3ff;
+}
+
+.third-party {
+    background-color: #ff9999;
+}
+
+.api {
+    background-color: #d2b48c;
 }
